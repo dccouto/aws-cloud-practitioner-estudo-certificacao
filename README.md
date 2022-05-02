@@ -2,162 +2,148 @@
 Resumo do estudo para a certificação AWS Practitioner
 
 
-=======================================
-===Módulo 1 - Introdução a Nuvem AWS===
-=======================================
+## Módulo 1 - Introdução a Nuvem AWS
+
 A nuvem é um conjunto de servidores que ficam em outra empresa.
 Os modelos de implantação de nuvem é Híbrida(on premises e nuvem) e 100% Nuvem.
 
-•Região = é o conjunto de Zona de disponibilidade (pelo menos 2)
-•Zona de disponibilidade(AZ) = conjunto de Data centers que estão próximos.
-•Ponto de Presença (CDN) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
+* Região = é o conjunto de Zona de disponibilidade (pelo menos 2)
+* Zona de disponibilidade(AZ) = conjunto de Data centers que estão próximos.
+* Ponto de Presença (CDN) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
 
--Como escolher uma região?
+### Como escolher uma região?
 Avaliar a governaça de dados e requisitos legais, Latência, Serviços disponíveis na região e o Preço varia de acordo com a Região(no Brasil costuma ser 50% mais caro do que a Virginia. Devido a impostos, custo de energia, etc). 
 
--Quais os Tipos de Interação com a AWS?
+### Quais os Tipos de Interação com a AWS?
 Linha de comando, GUI e SDK
-=============================================
-=== Módulo 2 - Conceitos básicos da nuvem ===
-=============================================
--O que é o EC2?
+
+## Módulo 2 - Conceitos básicos da nuvem
+
+### O que é o EC2?
 O elestic compute cloud são as máquinas virtuais.
 
--O que é o EC2 Auto Scaling?
+### O que é o EC2 Auto Scaling?
 é o serviço que aumenta ou reduz a escala horizontal das máquinas de acordo com a quantidade de demando de uso.
 
--O que é Instâncias spot?
+### O que é Instâncias spot?
 é o leilão de máquinas que estão ociosas na aws, o desconto chega a 90%, mas você pode perder a qualquer instante o uso dessas máquinas.
 
--O que é o Elastic Load Balance?
+### O que é o Elastic Load Balance?
 é o serviço que distribui automaticamente o tráfego entre vários destinos, antes de enviar ele faz um healf check pra verificar se a máquina destino está up.
 
--Quais são os tipos de Load Balance?
-•Tem o Application Load Balancer -> funciona na camada 7
-•Tem o Network Load Balancer -> funciona na camada 4
+### Quais são os tipos de Load Balance?
+* Tem o Application Load Balancer -> funciona na camada 7
+* Tem o Network Load Balancer -> funciona na camada 4
 
--O que é o AMI?
+### O que é o AMI?
 O amazon machine image é a imagem do sistema operacional e seus softwares(se instalado na imagem)
 
--O que é o EBS?
+### O que é o EBS?
 O elastic block store é o disco(HD) para as máquinas virtuais(EC2)
 
--O que é o S3?
+### O que é o S3?
 O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho unico de um objeto é de 5TB
 
--Quais são os tipos de armazenamentos do S3?
-•Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
-•Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
-•S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
-•S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
-•S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
-•S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
+### Quais são os tipos de armazenamentos do S3?
+* Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
+* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
+* S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
+* S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
+* S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
+* S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
 
--O que é o Virtual Private Cloud - VPC
+### O que é o Virtual Private Cloud - VPC
 Rede virtual na nuvem
 
--O que é o grupo de segurança?
+### O que é o grupo de segurança?
 É o ip tables, um firewall da rede. Por padrão nenhum tráfego de entrada é permitido e to tráfego de saída é permitido. No grupo de segurança podemos apenas dar "Permissão", não possui regra de "Negação".
 
--O que é o Route53?
+### O que é o Route53?
 É o serviço de dns da aws.
 
--O que é o CloudWatch?
+### O que é o CloudWatch?
 É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...).
 
--O que é o SNS?
+### O que é o SNS?
 O Simple Notification Service é o serviço de notificação da aws. (exemplo eviar um e-mail)
 
--O que é o RDS?
+### O que é o RDS?
 O Relacionation Database Service é o serviço de banco de dados relacional (SQL) da aws. É como se fosse o EC2 com o banco de dados já configurado. O usuário só acessa a máquina toda, apenas o banco de dados.
 
--O que é o Amazon Aurora?
+### O que é o Amazon Aurora?
 É um banco relacional de nivel empresarial, compatível com o MySQL ou o PostgreSQL, até 5x mais rápido que o MySQL padrão e 3x que o Postgre, faz backup contínuo para o S3.
 
--O que é o DynamoDB?
+### O que é o DynamoDB?
 É o banco NoSQL da aws.
 
-=============================================
-=== Módulo 3 - Automatize a implantação ===
-=============================================
+## Módulo 3 - Automatize a implantação
 
--O que é o CloudFormation?
+### O que é o CloudFormation?
 Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json. (parecido com o terraform)
 
--O que é o Elastic Beanstalk?
+### O que é o Elastic Beanstalk?
 A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exe: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
 
 
-==================================================
-=== Módulo 3 - Conecte e compartilhe seu dados ===
-==================================================
+## Módulo 3 - Conecte e compartilhe seu dados
 
--O que é o Direct Connect?
+### O que é o Direct Connect?
 É um serviço de link dedicado(link fisico) ligado de um datacenter a outro.(Baixa latência). É importante saber que o direct connect é para velocidade e VPN para segurança.
 
--O que é o Elastic File System?
+### O que é o Elastic File System?
 É um sistema de arquivo nativo da nuvem, escalável e elastico para linux. Pode montar o diretórios em várias máquinas.
 
--O que é o CloudFront?
+### O que é o CloudFront?
 o AWS CloudFront é um serviço da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
 
-============================
-=== Módulo 4 - Segurança ===
-============================
+## Módulo 4 - Segurança
 
--O que é o IAM?
+### O que é o IAM?
 O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
 
--Qual a diferença entre role e policy?
+### Qual a diferença entre role e policy?
 A role é a autorização de serviço para serviço.
 A policy é a autorização entre grupo de usuário para serviço.
 
--Quais são as boas práticas de segurança?
+### Quais são as boas práticas de segurança?
 Excluir chaves de acesso do usuário root, criar um usuário do IAM, conceder acesso de administrador e usar as credenciais do IAM para interagir com a AWS, habilitar o MFA(Autenticador de 2 fatores).
 
--O que é o Amazon Inspector?
+### O que é o Amazon Inspector?
 Realiza a avaliação das aplicações buscando vulnerabilidades.
 
--O que é o AWS Shield?
+### O que é o AWS Shield?
 É um serviço de proteção contra ataque de DDOS. A versão Stardard(free), a versão Advanced(+-$3000/mês mas se vc sofrer perdas financeiras devido o ataque, vc é ressarcido).
 
--O que é o AWS Artifect?
+### O que é o AWS Artifect?
 Ele fornece os relatórios de complience com os orgãos que a aws atende as leis e regulamentação.
 
-======================================
-=== Módulo 5 - Definições de Preço ===
-======================================
+## Módulo 5 - Definições de Preço
 
--Como você paga a AWS?
+### Como você paga a AWS?
 Pague conforme o uso; Economize ao reservar; Pague menos usando mais.
-•Computação: EC2 Cobrado por hora/segundo*(*somente linux)
-•Armazenamento: Cobrado normamente por GB
-•Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
+* Computação: EC2 Cobrado por hora/segundo*(*somente linux)
+* Armazenamento: Cobrado normamente por GB
+* Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
 
-==========================
-=== Módulo 5 - Suporte ===
-==========================
+## Módulo 5 - Suporte
 
--O que é o Trusted Advisor?
+### O que é o Trusted Advisor?
 O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance e melhorar a segurança. Ele vem agregado ao suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
 
--Quais são os Planos de Suporte?
-•Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-•Desenvolvedor (+-$30)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente e suporte à arquitetura básica.
-•Business (+-$100)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro.
-•Empresarial (+-$1000)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
+### Quais são os Planos de Suporte?
+* Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
+* Desenvolvedor (+-$30)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente e suporte à arquitetura básica.
+* Business (+-$100)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro.
+* Empresarial (+-$1000)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
 
-==============================
-=== Módulo 6 - Arquitetura ===
-==============================
+## Módulo 6 - Arquitetura
 
--O que é o Well-Architected Framework?
+### O que é o Well-Architected Framework?
 É um conjunto de boas práticas que me guiam no projeto de infraestrutura.
 
--Quais são os cinco pilares da estrutura?
-•Excelência Operacional
-•Segurança
-•Confiabilidade
-•Eficiência de performance
-•Otimização de custo
-
+### Quais são os cinco pilares da estrutura?
+* Excelência Operacional
+* Segurança
+* Confiabilidade
+* Eficiência de performance
+* Otimização de custo
