@@ -65,7 +65,7 @@ Rede virtual na nuvem
 É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...).
 
 ### O que é o SNS?
-O Simple Notification Service é o serviço de notificação da aws. (exemplo eviar um e-mail)
+O Simple Notification Service é o serviço de notificação da aws. (exemplo enviar um e-mail)
 
 ### O que é o RDS?
 O Relacionation Database Service é o serviço de banco de dados relacional (SQL) da aws. É como se fosse o EC2 com o banco de dados já configurado. O usuário só acessa a máquina toda, apenas o banco de dados.
