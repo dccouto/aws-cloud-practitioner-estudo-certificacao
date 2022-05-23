@@ -106,7 +106,8 @@ o AWS CloudFront é um serviço da web que acelera a distribuição do conteúdo
 ### Quais as boas práticas de segurança?
 * Não use a conta root para subir serviços;
 * Habilite o MFA (Multiplo fator de autenticação) para o root account;
-* Crie contas individuais para usuários (IAM)
+* Crie contas individuais para usuários (IAM);
+* Preencha  os dados de contato para "Cobranças", "Operações" e "Segurança";
 
 ### O que é o IAM?
 O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
