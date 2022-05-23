@@ -17,6 +17,11 @@ Avaliar a governaça de dados e requisitos legais, Latência, Serviços disponí
 ### Quais os Tipos de Interação com a AWS?
 Linha de comando, GUI e SDK
 
+### Criação de conta na AWS, informações básicas.
+* Pra cada sub-account, é necessário ter uma e-mail único;
+* A conta padrão (root account) não deve ser usada como principal.
+
+
 ## Módulo 2 - Conceitos básicos da nuvem
 
 ### O que é o EC2?
@@ -98,6 +103,11 @@ o AWS CloudFront é um serviço da web que acelera a distribuição do conteúdo
 
 ## Módulo 4 - Segurança
 
+### Quais as boas práticas de segurança?
+* Não use a conta root para subir serviços;
+* Habilite o MFA (Multiplo fator de autenticação) para o root account;
+* Crie contas individuais para usuários (IAM)
+
 ### O que é o IAM?
 O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
 
@@ -132,9 +142,9 @@ O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a r
 
 ### Quais são os Planos de Suporte?
 * Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-* Desenvolvedor (+-$30)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente e suporte à arquitetura básica.
-* Business (+-$100)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro.
-* Empresarial (+-$1000)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
+* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados de suporte com SLA de 12h para sistemas que não está em produção.
+* Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
+* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
 
 ## Módulo 6 - Arquitetura
 
