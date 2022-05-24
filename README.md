@@ -89,7 +89,7 @@ O Relacionation Database Service é o serviço de banco de dados relacional (SQL
 
 ### O que é o Well-architected?
 É um questionário que contém perguntas sobre o seu ambiente da aws e que no final será emitido um relatório com os níveis de risco que você tem dentro da aws.
-São dicas separado e pilares (Segurança, ) para melhorar seu ambiente da aws.
+São dicas separado e pilares (Excelencia operacional, Segurança, Confiabilidade, Performance, Otimização de custo) para melhorar seu ambiente da aws.
 
 ## Módulo 3 - Automatize a implantação
 
