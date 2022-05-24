@@ -153,7 +153,7 @@ O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a r
 ### Quais os tipos de Cases que podem ser aberto no Support Center?
 * Service limit increase -> Solicitações para aumentar limites de recursos. Exemplo: aumentar o limite default de 10 EC2 para 50 EC2.
 * Account and billing support -> Cases referente a conta e cobranças.
-* Technical support -> Suporte técnico.
+* Technical support (Somente pra quem paga um plano de suporte) -> Suporte técnico.
 
 ## Módulo 6 - Arquitetura
 
