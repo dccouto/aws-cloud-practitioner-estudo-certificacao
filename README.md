@@ -87,10 +87,6 @@ O Relacionation Database Service é o serviço de banco de dados relacional (SQL
 ### O que é o DynamoDB?
 É o banco NoSQL da aws.
 
-### O que é o Well-architected?
-É um questionário que contém perguntas sobre o seu ambiente da aws e que no final será emitido um relatório com os níveis de risco que você tem dentro da aws.
-São dicas separado e pilares (*Excelencia operacional, Segurança, Confiabilidade, Performance, Otimização de custo*) para melhorar seu ambiente da aws.
-Pode-se fazer uma Tag (Milestone) para marcar e medir pontos a partir que for evoluindo e melhorando a arquitetura. O Milestone é importante para acompanhar as evoluções da arquitetura a medida que vai respondendo o "formulário" do well-architected. É possível também gerar um relatório bem detalhado do momento atual.
 
 ## Módulo 3 - Automatize a implantação
 
@@ -171,6 +167,9 @@ O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a r
 
 ### O que é o Well-Architected Framework?
 É um conjunto de boas práticas que me guiam no projeto de infraestrutura.
+É um questionário que contém perguntas sobre o seu ambiente da aws e que no final será emitido um relatório com os níveis de risco que você tem dentro da aws.
+São dicas separado e pilares (*Excelencia operacional, Segurança, Confiabilidade, Performance, Otimização de custo*) para melhorar seu ambiente da aws.
+Pode-se fazer uma Tag (Milestone) para marcar e medir pontos a partir que for evoluindo e melhorando a arquitetura. O Milestone é importante para acompanhar as evoluções da arquitetura a medida que vai respondendo o "formulário" do well-architected. É possível também gerar um relatório bem detalhado do momento atual.
 
 ### Quais são os cinco pilares da estrutura?
 * Excelência Operacional
