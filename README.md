@@ -21,6 +21,12 @@ Linha de comando, GUI e SDK
 * Pra cada sub-account, é necessário ter uma e-mail único;
 * A conta padrão (root account) não deve ser usada como principal.
 
+### Free tier
+* Os serviços free são válidos por 1 ano
+* VMs gratuítas são da família t2 micro e tem limite de 750 horas por mês.
+
+### Qual a diferença entre Master Account e Root Account?
+Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
 
 ## Módulo 2 - Conceitos básicos da nuvem
 
@@ -113,8 +119,9 @@ o AWS CloudFront é um serviço da web que acelera a distribuição do conteúdo
 O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
 
 ### Qual a diferença entre role e policy?
-A role é a autorização de serviço para serviço.
-A policy é a autorização entre grupo de usuário para serviço.
+* A role é a autorização de serviço para serviço.
+* A policy é a autorização entre grupo de usuário para serviço. Policy não é para usuário e sim para grupo, ela restringe o uso de SERVIÇO.
+Exemplo de policy de serviço: O grupo de usuários não podem acessar os serviços de Lambda. 
 
 ### Quais são as boas práticas de segurança?
 Excluir chaves de acesso do usuário root, criar um usuário do IAM, conceder acesso de administrador e usar as credenciais do IAM para interagir com a AWS, habilitar o MFA(Autenticador de 2 fatores).
