@@ -143,9 +143,17 @@ O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a r
 
 ### Quais são os Planos de Suporte?
 * Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados de suporte com SLA de 12h para sistemas que não está em produção.
+* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção.
 * Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
 * Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
+
+### O que é um Suporte Case?
+É uma chamado ao time de suporte. Todos os chamado são denominados Case.
+
+### Quais os tipos de Cases que podem ser aberto no Support Center?
+* Service limit increase -> Solicitações para aumentar limites de recursos. Exemplo: aumentar o limite default de 10 EC2 para 50 EC2.
+* Account and billing support -> Cases referente a conta e cobranças.
+* Technical support -> Suporte técnico.
 
 ## Módulo 6 - Arquitetura
 
