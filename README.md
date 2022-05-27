@@ -139,8 +139,15 @@ Ele fornece os relatórios de complience com os orgãos que a aws atende as leis
 ## Módulo 5 - Definições de Preço
 
 ### Como você paga a AWS?
-Pague conforme o uso; Economize ao reservar; Pague menos usando mais.
-* Computação: EC2 Cobrado por hora/segundo*(*somente linux)
+##### Pague conforme o uso
+EC2 Cobrado por hora ou segundo*(*somente linux).
+##### Savings Plans
+Preço mais baixo pro EC2, AWS lambda e AWS Fargate, diante de um compromisso de uso de 1 ano ou 3 anos. Nesse modelo, pode chegar numa economia de até 72% do custo de computação da AWS.
+##### Instâncias Reservadas
+Indicadas para utilização de recursos previsíveis, com desconto de até 75%. Deve se comprometer com um prazo de 1 a 3 anos, e há 3 opções de pagamento, tudo adiantado, adiantado parcialmente, ou sem adiantamento.
+##### Instâncias Spot
+Economize ao reservar; Pague menos usando mais.
+* Computação: EC2 Cobrado por hora ou segundo*(*somente linux).
 * Armazenamento: Cobrado normamente por GB
 * Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
 
