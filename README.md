@@ -5,7 +5,7 @@ Resumo do estudo para a certificação AWS Practitioner
 ## Módulo 1 - Introdução a Nuvem AWS
 
 A nuvem é um conjunto de servidores que ficam em outra empresa.
-Os modelos de implantação de nuvem é Híbrida(on premises e nuvem) e 100% Nuvem.
+Os modelos de implantação de nuvem é Híbrida(on premises e nuvem), 100% Nuvem e Local(nuvem privada - virtualização do servidor local).
 
 * Região = é o conjunto de Zona de disponibilidade (pelo menos 2)
 * Zona de disponibilidade(AZ) = conjunto de Data centers que estão próximos.
@@ -31,7 +31,7 @@ Master Account é a primeira conta criada na AWS e Root Account é o usuário do
 ## Módulo 2 - Conceitos básicos da nuvem
 
 ### O que é o EC2?
-O elestic compute cloud são as máquinas virtuais.
+O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) compartilhado.
 
 ### O que é o EC2 Auto Scaling?
 é o serviço que aumenta ou reduz a escala horizontal das máquinas de acordo com a quantidade de demando de uso.
