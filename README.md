@@ -40,7 +40,7 @@ O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) c
 é o leilão de máquinas que estão ociosas na aws, o desconto chega a 90%, mas você pode perder a qualquer instante o uso dessas máquinas.
 
 ### O que é o Elastic Load Balance?
-é o serviço que distribui automaticamente o tráfego entre vários destinos, antes de enviar ele faz um healf check pra verificar se a máquina destino está up.
+é o serviço que distribui automaticamente o tráfego entre vários  recursos, como instâncias do Amazon EC2. Ele é execudado no nível de região é escalado automaticamente, antes de enviar ele faz um healf check pra verificar se a máquina destino está up. Embora o Elastic Load Balancing e o Amazon EC2 Auto Scaling sejam serviços separados, eles trabalham juntos para que os aplicativos executados no Amazon EC2 possam fornecer alto desempenho e disponibilidade.
 
 ### Quais são os tipos de Load Balance?
 * Tem o Application Load Balancer -> funciona na camada 7
