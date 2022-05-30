@@ -55,6 +55,9 @@ O elastic block store é o disco(HD) para as máquinas virtuais(EC2)
 ### O que é o S3?
 O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho unico de um objeto é de 5TB
 
+### O que é o AWS Lambda?
+É o serviço servless da AWS. Permite fazer o upload do código, configurar o gatilho (trigger) para execução do código e aguardar a execução. Esse ambiente é altamente escalavel e auto dimensionável. Adequado para processamento de até 15 min.
+
 ### Quais são os tipos de armazenamentos do S3?
 * Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
 * Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
