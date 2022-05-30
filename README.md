@@ -34,7 +34,7 @@ Master Account é a primeira conta criada na AWS e Root Account é o usuário do
 O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) compartilhado.
 
 ### O que é o EC2 Auto Scaling?
-é o serviço que aumenta ou reduz a escala horizontal das máquinas de acordo com a quantidade de demando de uso.
+é o serviço que aumenta ou reduz a escala horizontal das máquinas de acordo com a quantidade de demanda de uso.
 
 ### O que é Instâncias spot?
 é o leilão de máquinas que estão ociosas na aws, o desconto chega a 90%, mas você pode perder a qualquer instante o uso dessas máquinas.
