@@ -123,7 +123,8 @@ A gerencia da infra é toda da aws, é possível subir o código da aplicação 
 É um sistema de arquivo nativo da nuvem, escalável e elastico para linux. Pode montar o diretórios em várias máquinas.
 
 ### O que é o CloudFront?
-o AWS CloudFront é um serviço da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
+o AWS CloudFront é um serviço de CDN da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
+Ela usa pontos de presença (Edge locations) espalhados pelo mundo pra ajudar a acelerar a comunicação. Elas estão fora das regions. Elas também realizam o serviço de DNS(Route 53).
 
 ## Módulo 4 - Segurança
 
