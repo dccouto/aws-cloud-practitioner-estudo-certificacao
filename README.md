@@ -7,7 +7,7 @@ Resumo do estudo para a certificação AWS Practitioner
 A nuvem é um conjunto de servidores que ficam em outra empresa.
 Os modelos de implantação de nuvem é Híbrida(on premises e nuvem), 100% Nuvem e Local(nuvem privada - virtualização do servidor local).
 
-* Região = é o conjunto de Zona de disponibilidade (pelo menos 2)
+* Região = é o conjunto de Zona de disponibilidade (pelo menos 2), são áreas geograficamente isoladas.
 * Zona de disponibilidade(AZ) = Uma Zona de Disponibilidade é um único data center ou um grupo de data centers em uma Região. As Zonas de Disponibilidade estão localizadas a dezenas de quilômetros de distância umas das outras. A proximidade é suficiente para haver baixa latência.
 * Ponto de Presença (CDN) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
 
@@ -108,10 +108,10 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ## Módulo 3 - Automatize a implantação
 
 ### O que é o CloudFormation?
-Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json. (parecido com o terraform)
+Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json(parecido com o terraform). Ele trata infraestrutura como código.
 
 ### O que é o Elastic Beanstalk?
-A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exe: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
+A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
 
 
 ## Módulo 3 - Conecte e compartilhe seu dados
