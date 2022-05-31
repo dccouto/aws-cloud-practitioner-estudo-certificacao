@@ -105,6 +105,9 @@ O Amazon Elastic Kubernetes Service é um serviço totalmente gerenciado que voc
 é um mecanismo de computação sem servidor para contêineres. Ele funciona com o Amazon ECS e o Amazon EKS.
 Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS Fargate gerencia sua infraestrutura de servidor para você.
 
+### O que é o AWS Outposts?
+É o serviço da AWS que estender a infraestrutura e os serviços AWS para seu data center local.
+
 ## Módulo 3 - Automatize a implantação
 
 ### O que é o CloudFormation?
