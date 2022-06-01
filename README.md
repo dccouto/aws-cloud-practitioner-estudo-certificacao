@@ -49,20 +49,6 @@ O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) c
 ### O que é o AMI?
 O amazon machine image é a imagem do sistema operacional e seus softwares(se instalado na imagem)
 
-### O que é o EBS?
-O elastic block store é o disco(HD) para as máquinas virtuais(EC2)
-
-### O que é o S3?
-O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho unico de um objeto é de 5TB
-
-### Quais são os tipos de armazenamentos do S3?
-* Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
-* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
-* S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
-* S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
-* S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
-* S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
-
 ### O que é o Virtual Private Cloud - VPC
 Rede virtual na nuvem
 
@@ -122,6 +108,24 @@ Ferramenta que provisiona recurso automaticamente a partir de um template yaml o
 ### O que é o Elastic Beanstalk?
 A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
 
+## Armazenamento e Banco de Dados
+
+### O que é o EBS?
+O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. A AWS fornece a opção de backup incremental denominada Snapshot.
+
+### O que é o Instance Store?
+São "HDs" vinculados diretamente na instancia do EC2 em execução, se a instância for encerrada, os dados são perdidos.
+
+### O que é o S3?
+O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho unico de um objeto é de 5TB
+
+### Quais são os tipos de armazenamentos do S3?
+* Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
+* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
+* S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
+* S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
+* S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
+* S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
 
 ## Módulo 3 - Conecte e compartilhe seu dados
 
