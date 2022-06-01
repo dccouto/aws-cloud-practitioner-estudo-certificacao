@@ -66,6 +66,12 @@ O simple storage service é o armazenamento para objetos (como se fosse um dropb
 ### O que é o Virtual Private Cloud - VPC
 Rede virtual na nuvem
 
+### O que é o Gateway da Internet?
+Um gateway da internet é uma conexão entre uma VPC e a internet.
+
+### O que é o AWS Direct Connect?
+É uma conexão física(fibra) exclusiva, dedicada e privada conectada do seu servidor a AWS.
+
 ### O que é o grupo de segurança?
 É o ip tables, um firewall da rede. Por padrão nenhum tráfego de entrada é permitido e to tráfego de saída é permitido. No grupo de segurança podemos apenas dar "Permissão", não possui regra de "Negação".
 
