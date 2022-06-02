@@ -1,8 +1,6 @@
-# aws-resumo-certificacao-practitioner
-Resumo do estudo para a certificação AWS Practitioner
+# Resumo para certificação AWS Practitioner
 
-
-## Módulo 1 - Introdução a Nuvem AWS
+## Introdução a Nuvem AWS
 
 A nuvem é um conjunto de servidores que ficam em outra empresa.
 Os modelos de implantação de nuvem é Híbrida(on premises e nuvem), 100% Nuvem e Local(nuvem privada - virtualização do servidor local).
@@ -28,7 +26,7 @@ Linha de comando, GUI e SDK
 ### Qual a diferença entre Master Account e Root Account?
 Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
 
-## Módulo 2 - Conceitos básicos da nuvem
+## Conceitos básicos da nuvem
 
 ### O que é o EC2?
 O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) compartilhado.
@@ -100,14 +98,6 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ### O que é o AWS Outposts?
 É o serviço da AWS que estender a infraestrutura e os serviços AWS para seu data center local.
 
-## Módulo 3 - Automatize a implantação
-
-### O que é o CloudFormation?
-Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json(parecido com o terraform). Ele trata infraestrutura como código.
-
-### O que é o Elastic Beanstalk?
-A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
-
 ## Armazenamento e Banco de Dados
 
 ### O que é o EBS?
@@ -127,7 +117,7 @@ O simple storage service é o armazenamento para objetos (como se fosse um dropb
 * S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
 * S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
 
-## Módulo 3 - Conecte e compartilhe seu dados
+## Conecte e compartilhe seu dados
 
 ### O que é o Direct Connect?
 É um serviço de link dedicado(link fisico) ligado de um datacenter a outro.(Baixa latência). É importante saber que o direct connect é para velocidade e VPN para segurança.
@@ -139,7 +129,15 @@ O simple storage service é o armazenamento para objetos (como se fosse um dropb
 o AWS CloudFront é um serviço de CDN da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
 Ela usa pontos de presença (Edge locations) espalhados pelo mundo pra ajudar a acelerar a comunicação. Elas estão fora das regions. Elas também realizam o serviço de DNS(Route 53).
 
-## Módulo 4 - Segurança
+## Automatize a implantação
+
+### O que é o CloudFormation?
+Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json(parecido com o terraform). Ele trata infraestrutura como código.
+
+### O que é o Elastic Beanstalk?
+A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
+
+## Segurança
 
 ### Quais as boas práticas de segurança?
 * Não use a conta root para subir serviços;
