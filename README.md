@@ -106,6 +106,10 @@ O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estã
 ### O que é o EFS?
 É um sistema de arquivos escalável usado com os serviços de nuvem AWS e recursos locais. À medida que você adiciona e remove arquivos, o Amazon EFS expande e retrai automaticamente. Ele pode dimensionar sob demanda para petabytes sem interromper os aplicativos. 
 
+### Comparação entre o Amazon EBS e o Amazon EFS:
+Um volume do __Amazon EBS__ armazena dados em uma _única_ Zona de Disponibilidade. Para anexar uma instância do Amazon EC2 a um volume do EBS, tanto a instância do Amazon EC2 quanto o volume do EBS devem residir na mesma Zona de Disponibilidade.
+O __Amazon EFS__ é um serviço regional. Ele armazena dados em _várias_ Zonas de Disponibilidade e entre elas. O armazenamento duplicado permite que você acesse dados simultaneamente de todas as Zonas de Disponibilidade na Região em que um sistema de arquivos está localizado. Além disso, os servidores locais podem acessar o Amazon EFS usando o AWS Direct Connect.
+
 ### O que é o Instance Store?
 São "HDs" vinculados diretamente na instancia do EC2 em execução, se a instância for encerrada, os dados são perdidos.
 
