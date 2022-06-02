@@ -71,15 +71,6 @@ O Simple Notification Service é o serviço de notificação e mensagens da aws 
 ### O que é o SQS?
 O Simple Queue Service é o serviço de fila da AWS que permite que envia, armazena e recebe mensagem entre componentes de software em qualquer volume sem perder mensagens.
 
-### O que é o RDS?
-O Relacionation Database Service é o serviço de banco de dados relacional (SQL) da aws. É como se fosse o EC2 com o banco de dados já configurado. O usuário só acessa a máquina toda, apenas o banco de dados.
-
-### O que é o Amazon Aurora?
-É um banco relacional de nivel empresarial, compatível com o MySQL ou o PostgreSQL, até 5x mais rápido que o MySQL padrão e 3x que o Postgre, faz backup contínuo para o S3.
-
-### O que é o DynamoDB?
-É o banco NoSQL da aws.
-
 ## Serviços de container e Servless
 
 ### O que é o AWS Lambda?
@@ -98,7 +89,7 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ### O que é o AWS Outposts?
 É o serviço da AWS que estender a infraestrutura e os serviços AWS para seu data center local.
 
-## Armazenamento e Banco de Dados
+## Armazenamento
 
 ### O que é o EBS?
 O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. Uma caracteristica é que ele não é dimensionável, caso ele esgote o tamanho terá que criar um outro. A AWS fornece a opção de backup incremental denominada Snapshot.
@@ -123,6 +114,20 @@ O simple storage service é o armazenamento para objetos (como se fosse um dropb
 * S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
 * S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
 * S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
+
+## Banco de Dados
+
+### O que é o RDS?
+O Relacionation Database Service é o serviço de banco de dados relacional (SQL) da aws. É como se fosse o EC2 com o banco de dados já configurado. O usuário não acessa a máquina toda, apenas o banco de dados. O Amazon RDS é um serviço gerenciado que automatiza tarefas como provisionamento de hardware, configuração de banco de dados, patch e backups.
+
+### O que é o Amazon Aurora?
+É um banco relacional de nivel empresarial, compatível com o MySQL ou o PostgreSQL, até 5x mais rápido que o MySQL padrão e 3x que o Postgre, faz backup contínuo para o S3. O preço é 1/10 do custo de bases de dados comerciais
+
+### O que é o DynamoDB?
+É o banco NoSQL da aws, autogerenciável, autoescalável e tem de resposta muito rápido.
+
+### O que é o Amazon Redshift?
+O Amazon Redshift é serviço de data warehouse que você pode usar para análise de big data. Ele oferece a capacidade de coletar dados de muitas fontes além de ajudar a entender relações e tendências em todos os seus dados.
 
 ## Conecte e compartilhe seu dados
 
