@@ -101,13 +101,16 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ## Armazenamento e Banco de Dados
 
 ### O que é o EBS?
-O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. A AWS fornece a opção de backup incremental denominada Snapshot.
+O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. Uma caracteristica é que ele não é dimensionável, caso ele esgote o tamanho terá que criar um outro. A AWS fornece a opção de backup incremental denominada Snapshot.
+
+### O que é o EFS?
+É um sistema de arquivos escalável usado com os serviços de nuvem AWS e recursos locais. À medida que você adiciona e remove arquivos, o Amazon EFS expande e retrai automaticamente. Ele pode dimensionar sob demanda para petabytes sem interromper os aplicativos. 
 
 ### O que é o Instance Store?
 São "HDs" vinculados diretamente na instancia do EC2 em execução, se a instância for encerrada, os dados são perdidos.
 
 ### O que é o S3?
-O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho unico de um objeto é de 5TB
+O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho máximo de um unico objeto é de 5TB
 
 ### Quais são os tipos de armazenamentos do S3?
 * Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
