@@ -129,6 +129,10 @@ O Relacionation Database Service é o serviço de banco de dados relacional (SQL
 ### O que é o Amazon Redshift?
 O Amazon Redshift é serviço de data warehouse que você pode usar para análise de big data. Ele oferece a capacidade de coletar dados de muitas fontes além de ajudar a entender relações e tendências em todos os seus dados.
 
+### O que é o AWS DMS?
+O AWS Database Migration Service permite migrar bancos de dados relacionais e não relacionais e outros tipos de armazenamentos de dados para a AWS.
+Com o AWS DMS, você __move dados entre bancos de dados de origem e de destino__. Os bancos de dados de origem e de destino podem ser do __mesmo tipo ou de tipos diferentes__. Durante a migração, o banco de dados de origem permanece operacional, reduzindo o tempo de inatividade em qualquer aplicativo que dependa do banco de dados. 
+
 ## Conecte e compartilhe seu dados
 
 ### O que é o Direct Connect?
