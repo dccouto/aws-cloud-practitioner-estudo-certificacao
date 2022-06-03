@@ -155,6 +155,12 @@ A gerencia da infra é toda da aws, é possível subir o código da aplicação 
 
 ## Segurança
 
+### Quais os conceitos de resposabilidade compartilhada?
+O Usuário é responsável pela segurnaca __na__ nuvem.
+A AWS é responsável pela segurnaca __da__ nuvem.
+![image](https://user-images.githubusercontent.com/53017748/171906239-338c4e21-a287-44a8-993c-577f7bfb5db9.png)
+
+
 ### Quais as boas práticas de segurança?
 * Não use a conta root para subir serviços;
 * Habilite o MFA (Multiplo fator de autenticação) para o root account;
