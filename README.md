@@ -101,6 +101,9 @@ O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estã
 Um volume do __Amazon EBS__ armazena dados em uma _única_ Zona de Disponibilidade. Para anexar uma instância do Amazon EC2 a um volume do EBS, tanto a instância do Amazon EC2 quanto o volume do EBS devem residir na mesma Zona de Disponibilidade.
 O __Amazon EFS__ é um serviço regional. Ele armazena dados em _várias_ Zonas de Disponibilidade e entre elas. O armazenamento duplicado permite que você acesse dados simultaneamente de todas as Zonas de Disponibilidade na Região em que um sistema de arquivos está localizado. Além disso, os servidores locais podem acessar o Amazon EFS usando o AWS Direct Connect.
 
+### O que é o Elastic File System?
+É um sistema de arquivo nativo da nuvem, escalável e elastico para linux. Pode montar o diretórios em várias máquinas.
+
 ### O que é o Instance Store?
 São "HDs" vinculados diretamente na instancia do EC2 em execução, se a instância for encerrada, os dados são perdidos.
 
@@ -137,9 +140,6 @@ Com o AWS DMS, você __move dados entre bancos de dados de origem e de destino__
 
 ### O que é o Direct Connect?
 É um serviço de link dedicado(link fisico) ligado de um datacenter a outro.(Baixa latência). É importante saber que o direct connect é para velocidade e VPN para segurança.
-
-### O que é o Elastic File System?
-É um sistema de arquivo nativo da nuvem, escalável e elastico para linux. Pode montar o diretórios em várias máquinas.
 
 ### O que é o CloudFront?
 o AWS CloudFront é um serviço de CDN da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
