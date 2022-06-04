@@ -187,6 +187,9 @@ Realiza a avaliação das aplicações buscando vulnerabilidades.
 ### O que é o AWS Artifect?
 Ele fornece os relatórios de complience com os orgãos que a aws atende as leis e regulamentação.
 
+### O que é o AWS Organizations?
+É um local central para gerenciar várias contas da AWS, consolidar faturamento e agrupar hieraquicarmente as contas.
+
 ## Módulo 5 - Definições de Preço
 
 ### Como você paga a AWS?
