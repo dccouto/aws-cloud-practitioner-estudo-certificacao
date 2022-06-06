@@ -181,11 +181,18 @@ Excluir chaves de acesso do usuário root, criar um usuário do IAM, conceder ac
 ### O que é o Amazon Inspector?
 Realiza a avaliação das aplicações buscando vulnerabilidades.
 
+### O que é o Amazon GuardDuty?
+O Amazon GuardDuty é um serviço que fornece detecção inteligente de ameaças para sua infraestrutura e seus recursos AWS. Ele identifica ameaças monitorando continuamente a atividade da rede e o comportamento da conta no seu ambiente AWS.
+
 ### O que é o AWS Shield?
 É um serviço de proteção contra ataque de DDOS. A versão Stardard(free), a versão Advanced(+-$3000/mês mas se vc sofrer perdas financeiras devido o ataque, vc é ressarcido).
 
 ### O que é o AWS WAF?
 Firewall de aplicação web para filtar o tráfego de entrada detectando rastros de agentes mal intencionados.
+
+### O que é o AWS KMS?
+O AWS Key Management Service (AWS KMS) permite que você execute operações de criptografia pelo uso de chaves de criptografia.
+Você pode usar o AWS KMS para criar, gerenciar e usar chaves de criptografia. 
 
 ### O que é o AWS Artifect?
 Ele fornece os relatórios de conformidade com os orgãos que a aws atende as leis e regulamentação.
