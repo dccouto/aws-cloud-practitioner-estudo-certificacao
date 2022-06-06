@@ -184,8 +184,11 @@ Realiza a avaliação das aplicações buscando vulnerabilidades.
 ### O que é o AWS Shield?
 É um serviço de proteção contra ataque de DDOS. A versão Stardard(free), a versão Advanced(+-$3000/mês mas se vc sofrer perdas financeiras devido o ataque, vc é ressarcido).
 
+### O que é o AWS WAF?
+Firewall de aplicação web para filtar o tráfego de entrada detectando rastros de agentes mal intencionados.
+
 ### O que é o AWS Artifect?
-Ele fornece os relatórios de complience com os orgãos que a aws atende as leis e regulamentação.
+Ele fornece os relatórios de conformidade com os orgãos que a aws atende as leis e regulamentação.
 
 ### O que é o AWS Organizations?
 É um local central para gerenciar várias contas da AWS, consolidar faturamento e agrupar hieraquicarmente as contas.
