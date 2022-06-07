@@ -225,11 +225,12 @@ São hosts físicos dedicados sem compartilhamento com outros usuários.
 O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
 
 Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
-
-## Módulo 5 - Suporte
+* O que é CloudTrail Insights? Esse recurso opcional permite que o CloudTrail detecte automaticamente atividades de API incomuns em sua conta AWS.
 
 ### O que é o Trusted Advisor?
-O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance e melhorar a segurança. Ele vem agregado ao suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
+O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
+
+## Módulo 5 - Suporte
 
 ### Quais são os Planos de Suporte?
 * Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
