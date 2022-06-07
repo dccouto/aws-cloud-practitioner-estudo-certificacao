@@ -62,9 +62,6 @@ Um gateway da internet é uma conexão entre uma VPC e a internet.
 ### O que é o Route53?
 É o serviço de dns da aws.
 
-### O que é o CloudWatch?
-É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...).
-
 ### O que é o SNS?
 O Simple Notification Service é o serviço de notificação e mensagens da aws (publicação/assinatura). Parecido com SQS com a diferença que também pode enviar mensagens á usuários finais e dividido em tópicos. (exemplo enviar um e-mail)
 
@@ -218,6 +215,16 @@ São hosts físicos dedicados sem compartilhamento com outros usuários.
 ** Economize ao reservar; Pague menos usando mais.
 * Armazenamento: Cobrado normamente por GB
 * Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
+
+## Monitoramento e Análise
+
+### O que é o CloudWatch?
+É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...), gerenciar várias métricas e configurar ações de alarme de acordo com os dados dessas métricas.
+
+### O que é o AWS CloudTrail?
+O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
+
+Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
 
 ## Módulo 5 - Suporte
 
