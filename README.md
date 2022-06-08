@@ -209,15 +209,15 @@ Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e c
 * O que é CloudTrail Insights? Esse recurso opcional permite que o CloudTrail detecte automaticamente atividades de API incomuns em sua conta AWS.
 
 ### O que é o Trusted Advisor?
-O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
+O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte(a partir do Business), então se não tiver a assinatura mensal de suporte, não terá esse serviço.
 
 ## Suporte e Definição de Preços
 
 ### Quais são os Planos de Suporte?
 * Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção.
+* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção e 24h para suporte geral.
 * Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
-* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
+* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento. SLA de 15 minutos para carga de trabalho crítica.
 
 ### O que é um Suporte Case?
 É uma chamado ao time de suporte. Todos os chamado são denominados Case.
@@ -249,6 +249,9 @@ No AWS Budgets, você pode criar orçamentos para planejar o uso do serviço, os
 As informações do AWS Budgets são atualizadas três vezes por dia. Isso ajuda você a definir com precisão a proximidade entre seu uso e os valores orçados ou limites de nível gratuito da AWS.
 No AWS Budgets, você também pode definir alertas personalizados para quando seu uso exceder (ou estiver prestes a exceder) o valor orçado.
 
+### O que é o AWS Cost Explorer?
+O AWS Cost Explorer é uma ferramenta que permite visualizar, interpretar e gerenciar seus custos e uso da AWS ao longo do tempo.
+O AWS Cost Explorer inclui um relatório básico dos custos e do uso dos cinco principais serviços da AWS de acúmulo de custos. Você pode aplicar filtros e grupos personalizados para analisar seus dados. Por exemplo, você pode exibir o uso de recursos no nível por hora.
 
 ## Módulo 6 - Arquitetura
 
