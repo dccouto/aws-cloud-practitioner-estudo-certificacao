@@ -197,7 +197,35 @@ Ele fornece os relatórios de conformidade com os orgãos que a aws atende as le
 ### O que é o AWS Organizations?
 É um local central para gerenciar várias contas da AWS, consolidar faturamento e agrupar hieraquicarmente as contas.
 
-## Módulo 5 - Definições de Preço
+## Monitoramento e Análise
+
+### O que é o CloudWatch?
+É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...), gerenciar várias métricas e configurar ações de alarme de acordo com os dados dessas métricas.
+
+### O que é o AWS CloudTrail?
+O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
+
+Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
+* O que é CloudTrail Insights? Esse recurso opcional permite que o CloudTrail detecte automaticamente atividades de API incomuns em sua conta AWS.
+
+### O que é o Trusted Advisor?
+O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
+
+## Suporte e Definição de Preços
+
+### Quais são os Planos de Suporte?
+* Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
+* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção.
+* Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
+* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
+
+### O que é um Suporte Case?
+É uma chamado ao time de suporte. Todos os chamado são denominados Case.
+
+### Quais os tipos de Cases que podem ser aberto no Support Center?
+* Service limit increase -> Solicitações para aumentar limites de recursos. Exemplo: aumentar o limite default de 10 EC2 para 50 EC2, sempres seleciona o Region e serviço.
+* Account and billing support -> Cases referente a conta e cobranças.
+* Technical support (Somente pra quem paga um plano de suporte) -> Suporte técnico.
 
 ### Como você paga a AWS?
 #### Computação
@@ -216,35 +244,11 @@ São hosts físicos dedicados sem compartilhamento com outros usuários.
 * Armazenamento: Cobrado normamente por GB
 * Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
 
-## Monitoramento e Análise
+### O que é a AWS Budgets?
+No AWS Budgets, você pode criar orçamentos para planejar o uso do serviço, os custos de serviço e as reservas de instâncias.
+As informações do AWS Budgets são atualizadas três vezes por dia. Isso ajuda você a definir com precisão a proximidade entre seu uso e os valores orçados ou limites de nível gratuito da AWS.
+No AWS Budgets, você também pode definir alertas personalizados para quando seu uso exceder (ou estiver prestes a exceder) o valor orçado.
 
-### O que é o CloudWatch?
-É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...), gerenciar várias métricas e configurar ações de alarme de acordo com os dados dessas métricas.
-
-### O que é o AWS CloudTrail?
-O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
-
-Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
-* O que é CloudTrail Insights? Esse recurso opcional permite que o CloudTrail detecte automaticamente atividades de API incomuns em sua conta AWS.
-
-### O que é o Trusted Advisor?
-O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte, então se não tiver a assinatura mensal de suporte, não terá esse serviço.
-
-## Módulo 5 - Suporte
-
-### Quais são os Planos de Suporte?
-* Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção.
-* Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
-* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento.
-
-### O que é um Suporte Case?
-É uma chamado ao time de suporte. Todos os chamado são denominados Case.
-
-### Quais os tipos de Cases que podem ser aberto no Support Center?
-* Service limit increase -> Solicitações para aumentar limites de recursos. Exemplo: aumentar o limite default de 10 EC2 para 50 EC2, sempres seleciona o Region e serviço.
-* Account and billing support -> Cases referente a conta e cobranças.
-* Technical support (Somente pra quem paga um plano de suporte) -> Suporte técnico.
 
 ## Módulo 6 - Arquitetura
 
