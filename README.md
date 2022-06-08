@@ -253,7 +253,7 @@ No AWS Budgets, você também pode definir alertas personalizados para quando se
 O AWS Cost Explorer é uma ferramenta que permite visualizar, interpretar e gerenciar seus custos e uso da AWS ao longo do tempo.
 O AWS Cost Explorer inclui um relatório básico dos custos e do uso dos cinco principais serviços da AWS de acúmulo de custos. Você pode aplicar filtros e grupos personalizados para analisar seus dados. Por exemplo, você pode exibir o uso de recursos no nível por hora.
 
-## Módulo 6 - Arquitetura
+## Arquitetura
 
 ### O que é o Well-Architected Framework?
 É um conjunto de boas práticas que me guiam no projeto de infraestrutura.
@@ -267,3 +267,14 @@ Pode-se fazer uma Tag (Milestone) para marcar e medir pontos a partir que for ev
 * Confiabilidade
 * Eficiência de performance
 * Otimização de custo
+
+## Migração e Inovação
+
+###  O que é o AWS CAF?
+O AWS Cloud Adoption Framework (AWS CAF) organiza orientações em seis áreas de foco chamadas __perspectivas__. Cada perspectiva aborda responsabilidades distintas. O processo de planejamento ajuda as pessoas certas em toda a organização a se prepararem para as mudanças futuras.
+
+Em geral, as perspectivas de __negócio, pessoas e governança__ se concentram nas capacidades comerciais, enquanto as perspectivas de __plataforma, segurança e operações__ se concentram em capacidades técnicas.
+
+### O que é o AWS Snow Family?
+A AWS Snow Family é uma coleção de dispositivos físicos para transporte físico de até exabytes de dados para dentro e para fora da AWS. 
+A AWS Snow Family consiste nos serviços __AWS Snowcone__(Capacidade de 8TB), __AWS Snowball__(Capacidade de 80TB) e __AWS Snowmobile__(100 petabytes).
