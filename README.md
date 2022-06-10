@@ -240,7 +240,7 @@ Elas permite solicitar EC2 com desconto de até 90%, mas a AWS pode solicitar a 
 ##### Host Dedicados
 São hosts físicos dedicados sem compartilhamento com outros usuários.
 
-** Economize ao reservar; Pague menos usando mais.
+*Economize ao reservar; Pague menos usando mais.
 * Armazenamento: Cobrado normamente por GB
 * Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
 
