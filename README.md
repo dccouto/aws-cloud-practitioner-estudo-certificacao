@@ -20,8 +20,10 @@ Linha de comando, GUI e SDK
 * A conta padrão (root account) não deve ser usada como principal.
 
 ### Free tier
-* Os serviços free são válidos por 1 ano
-* VMs gratuítas são da família t2 micro e tem limite de 750 horas por mês.
+Há 3 tipos de serviços gratuítos na AWS, são eles:
+* __Trial__: Grátis por 2 meses.
+* __12 meses__: Grátis por 12 meses apartir da abertura da conta.
+* __Always Free__: Sempre grátis com limites mensal. VMs gratuítas são da família t2 micro e tem limite de 750 horas por mês.
 
 ### Qual a diferença entre Master Account e Root Account?
 Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
