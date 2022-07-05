@@ -280,6 +280,3 @@ Em geral, as perspectivas de __negócio, pessoas e governança__ se concentram n
 ### O que é o AWS Snow Family?
 A AWS Snow Family é uma coleção de dispositivos físicos para transporte físico de até exabytes de dados para dentro e para fora da AWS. 
 A AWS Snow Family consiste nos serviços __AWS Snowcone__(Capacidade de 8TB), __AWS Snowball__(Capacidade de 80TB) e __AWS Snowmobile__(100 petabytes).
-
-*[CAF]: Cloud Adoption Framework
-*[AWS]: Hyper Text Markup Language
