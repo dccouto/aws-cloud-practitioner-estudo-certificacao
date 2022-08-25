@@ -88,6 +88,9 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ### O que é o AWS Outposts?
 É o serviço da AWS que estender a infraestrutura e os serviços AWS para seu data center local.
 
+### O Amazon Athena?
+é um serviço de consultas interativas que facilita a análise de dados no Amazon S3 usando SQL padrão. O Athena não precisa de servidor. Portanto, não há infraestrutura para gerenciar e você paga apenas pelas consultas executadas. O Athena é fácil de usar.
+
 ## Armazenamento
 
 ### O que é o EBS?
