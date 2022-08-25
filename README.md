@@ -91,6 +91,9 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ### O Amazon Athena?
 é um serviço de consultas interativas que facilita a análise de dados no Amazon S3 usando SQL padrão. O Athena não precisa de servidor. Portanto, não há infraestrutura para gerenciar e você paga apenas pelas consultas executadas. O Athena é fácil de usar.
 
+### O que é AWS Glue?
+é um serviço que oferece todos os recursos necessários para a integração dos dados, e assim é possível começar a analisar seus dados e usá-los em minutos, em vez de meses. A integração de dados é o processo de preparar e combinar os dados para análise, machine learning e desenvolvimento de aplicações.
+
 ## Armazenamento
 
 ### O que é o EBS?
