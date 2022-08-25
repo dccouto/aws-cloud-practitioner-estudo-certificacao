@@ -281,6 +281,9 @@ Em geral, as perspectivas de __negócio, pessoas e governança__ se concentram n
 A AWS Snow Family é uma coleção de dispositivos físicos para transporte físico de até exabytes de dados para dentro e para fora da AWS. 
 A AWS Snow Family consiste nos serviços __AWS Snowcone__(Capacidade de 8TB), __AWS Snowball__(Capacidade de 80TB) e __AWS Snowmobile__(100 petabytes).
 
+# O que é o Amazon QuickSight?
+É um serviço de business intelligence (BI) em escala de nuvem que você pode usar para fornecereasy-to-understandinsights para as pessoas com quem você trabalha, onde quer que estejam. Tipo um power BI
+
 # Preparaçãp para a prova
 ### Divisão de perguntas
 ![image](https://user-images.githubusercontent.com/53017748/179562013-35c6d771-cb11-4d3d-89c0-f15dba44878b.png)
