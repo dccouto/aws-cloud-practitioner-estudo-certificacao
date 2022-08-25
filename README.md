@@ -153,6 +153,9 @@ Com o AWS DMS, você __move dados entre bancos de dados de origem e de destino__
 o AWS CloudFront é um serviço de CDN da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
 Ela usa pontos de presença (Edge locations) espalhados pelo mundo pra ajudar a acelerar a comunicação. Elas estão fora das regions. Elas também realizam o serviço de DNS(Route 53).
 
+### O Amazon CloudSearch 
+é um serviço gerenciado na nuvem AWS com o qual é possível configurar, gerenciar e dimensionar uma solução de pesquisa para o seu site ou aplicativo de forma simples e econômica.
+
 ## Automatize a implantação
 
 ### O que é o CloudFormation?
