@@ -185,7 +185,7 @@ A AWS é responsável pela segurnaca __da__ nuvem.
 O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
 
 ### Qual a diferença entre role e policy?
-* A __role__ é a autorização de serviço para serviço. É uma permissão temporária.
+* A __role__ é a autorização de serviço para serviço. É uma permissão temporária(15 minutos até 36 horas).
 * A __policy__ é a autorização entre grupo de usuário para serviço. Policy não é para usuário e sim para grupo, ela restringe o uso de SERVIÇO.
 Exemplo de policy de serviço: O grupo de usuários não podem acessar os serviços de Lambda. 
 
