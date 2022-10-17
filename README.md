@@ -100,7 +100,7 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ## Armazenamento
 
 ### O que é o EBS?
-O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. Uma caracteristica é que ele não é dimensionável, caso ele esgote o tamanho terá que criar um outro. A AWS fornece a opção de backup incremental denominada Snapshot.
+O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. Uma caracteristica é que ele não é dimensionável, caso ele esgote o tamanho terá que criar um outro. A AWS fornece a opção de backup incremental denominada Snapshot. OBS: O EC2 e o EBS PRECISAM estar dentro da MESMA AZ.
 
 ### O que é o EFS?
 É um sistema de arquivos escalável usado com os serviços de nuvem AWS e recursos locais. À medida que você adiciona e remove arquivos, o Amazon EFS expande e retrai automaticamente. Ele pode dimensionar sob demanda para petabytes sem interromper os aplicativos. 
