@@ -91,6 +91,9 @@ Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS
 ### O Amazon Athena?
 é um serviço de consultas interativas que facilita a análise de dados no Amazon S3 usando SQL padrão. O Athena não precisa de servidor. Portanto, não há infraestrutura para gerenciar e você paga apenas pelas consultas executadas. O Athena é fácil de usar.
 
+### O que é Kinesis?
+é um serviço de streaming de dados em tempo real.
+
 ### O que é AWS Glue?
 é um serviço que oferece todos os recursos necessários para a integração dos dados, e assim é possível começar a analisar seus dados e usá-los em minutos, em vez de meses. A integração de dados é o processo de preparar e combinar os dados para análise, machine learning e desenvolvimento de aplicações.
 
@@ -294,7 +297,7 @@ A AWS Snow Family é uma coleção de dispositivos físicos para transporte fís
 A AWS Snow Family consiste nos serviços __AWS Snowcone__(Capacidade de 8TB), __AWS Snowball__(Capacidade de 80TB) e __AWS Snowmobile__(100 petabytes).
 
 # O que é o Amazon QuickSight?
-É um serviço de business intelligence (BI) em escala de nuvem que você pode usar para fornecereasy-to-understandinsights para as pessoas com quem você trabalha, onde quer que estejam. Tipo um power BI
+É um serviço de business intelligence (BI) em escala de nuvem que você pode usar para fornecer easy-to-understandinsights para as pessoas com quem você trabalha, onde quer que estejam. Tipo um power BI
 
 # Preparaçãp para a prova
 ### Divisão de perguntas
