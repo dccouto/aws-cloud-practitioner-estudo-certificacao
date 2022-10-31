@@ -51,7 +51,7 @@ __Ele faz o balanceamento dentro da mesma Região entre AZs__. Com isso ele for�
 O amazon machine image é a imagem do sistema operacional e seus softwares(se instalado na imagem)
 
 ### O que é o Virtual Private Cloud - VPC
-Rede virtual na nuvem
+Rede virtual privada(vpn) na nuvem, que pode ser feito sub-redes públicas e privadas.
 
 ### O que é o Gateway da Internet?
 Um gateway da internet é uma conexão entre uma VPC e a internet.
@@ -136,7 +136,7 @@ O Relacionation Database Service é o serviço de banco de dados relacional (SQL
 É um banco relacional de nivel empresarial, compatível com o MySQL ou o PostgreSQL, até 5x mais rápido que o MySQL padrão e 3x que o Postgre, faz backup contínuo para o S3. O preço é 1/10 do custo de bases de dados comerciais
 
 ### O que é o DynamoDB?
-É o banco NoSQL da aws, autogerenciável, autoescalável e tem de resposta muito rápido.
+É o banco NoSQL da aws, serveless, autogerenciável, autoescalável e tem de resposta muito rápido.
 
 ### O que é o Amazon Redshift?
 O Amazon Redshift é serviço de data warehouse que você pode usar para análise de big data. Ele oferece a capacidade de coletar dados de muitas fontes além de ajudar a entender relações e tendências em todos os seus dados.
