@@ -7,13 +7,13 @@ Os modelos de implantação de nuvem é Híbrida(on premises e nuvem), 100% Nuve
 
 * Região = é o conjunto de Zona de disponibilidade (pelo menos 2), são áreas geograficamente isoladas.
 * Zona de disponibilidade(AZ) = Uma Zona de Disponibilidade é um único data center ou um grupo de data centers em uma Região. As Zonas de Disponibilidade estão localizadas a dezenas de quilômetros de distância umas das outras. A proximidade é suficiente para haver baixa latência.
-* Ponto de Presença (CDN) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
+* Ponto de Presença - CDN (Edge Locations) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
 
 ### Como escolher uma região?
-Avaliar a governança de dados e requisitos legais, Latência, Serviços disponíveis na região e o Preço varia de acordo com a Região(no Brasil costuma ser 50% mais caro do que a Virginia. Devido a impostos, custo de energia, etc). 
+Avaliar a governança de dados e requisitos legais, Latência, Serviços disponíveis na região(nem todos os serviços estão disponíveis em todas as regiões) e o Preço varia de acordo com a Região(no Brasil costuma ser 50% mais caro do que a Virginia. Devido a impostos, custo de energia, etc). 
 
 ### Quais os Tipos de Interação com a AWS?
-Linha de comando, GUI e SDK
+Linha de comando (console), GUI (Site da AWS) e SDK
 
 ### Criação de conta na AWS, informações básicas.
 * Pra cada sub-account, é necessário ter uma e-mail único;
