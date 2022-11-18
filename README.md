@@ -124,7 +124,7 @@ O simple storage service é o armazenamento para objetos (como se fosse um dropb
 
 ### Quais são os tipos de armazenamentos do S3?
 * Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
-* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias.
+* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias. Há também o __Instant Retrieval__(recupera o arquivo em segundos, mas custa caro quando isso é necessário)
 * S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
 * S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
 * S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
