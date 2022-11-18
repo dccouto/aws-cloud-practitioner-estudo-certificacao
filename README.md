@@ -71,6 +71,9 @@ O Simple Notification Service é o serviço de notificação e mensagens da aws 
 ### O que é o SQS?
 O Simple Queue Service é o serviço de fila da AWS que permite que envia, armazena e recebe mensagem entre componentes de software em qualquer volume sem perder mensagens.
 
+### O que é o SES?
+é um provedor de serviços de e-mail na nuvem que pode ser integrado a qualquer aplicação para envio de e-mails em massa. (Pode ser usado para email marketing)
+
 ## Serviços de container e Servless
 
 ### O que é o AWS Lambda?
