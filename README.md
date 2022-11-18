@@ -59,8 +59,8 @@ Um gateway da internet é uma conexão entre uma VPC e a internet.
 ### O que é o AWS Direct Connect?
 É uma conexão física(fibra) exclusiva, dedicada e privada conectada do seu servidor a AWS.
 
-### O que é o grupo de segurança?
-É o ip tables, um firewall da rede. Por padrão nenhum tráfego de entrada é permitido e to tráfego de saída é permitido. No grupo de segurança podemos apenas dar "Permissão", não possui regra de "Negação".
+### O que é o grupo de segurança (Security Group)?
+É o ip tables, um __firewall__ da rede. Por padrão nenhum tráfego de entrada é permitido e to tráfego de saída é permitido. No grupo de segurança podemos apenas dar "Permissão", não possui regra de "Negação".
 
 ### O que é o Route53?
 É o serviço de dns da aws.
