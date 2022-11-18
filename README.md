@@ -166,7 +166,11 @@ Ela usa pontos de presença (Edge locations) espalhados pelo mundo pra ajudar a 
 Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json(parecido com o terraform). Ele trata infraestrutura como código.
 
 ### O que é o Elastic Beanstalk?
-A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java, php...) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle.
+A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java, php...) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle. O Serviço do Beanstalk não é cobrado $, o que é cobrado é os recursos de infraestrutura que ele provisonar. 
+
+### Diferença entre o CloudFormation e o Elastic Beanstalk?
+O CloudFormation provisiona infraestrutura para qualquer serviço dentro da AWS.
+O Elastic Beanstalk é feito para provisionar infraestrutura para aplicações WEB.
 
 ## Segurança
 
