@@ -190,7 +190,8 @@ A AWS é responsável pela segurnaca __da__ nuvem.
 * Preencha  os dados de contato para "Cobranças", "Operações" e "Segurança";
 
 ### O que é o IAM?
-O Identity and Access Management é o controle com segurança de acesso, pelo AIM você cria usuários.
+O Identity and Access Management é o controle com segurança de acesso, nele você diz quem vai acessar o quê. 
+Pelo AIM você cria e gerencia usuários, policy e roles.
 
 ### Qual a diferença entre role e policy?
 * A __role__ é a autorização de serviço para serviço. É uma permissão temporária(15 minutos até 36 horas).
