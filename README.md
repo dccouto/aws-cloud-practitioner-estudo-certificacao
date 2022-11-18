@@ -39,13 +39,13 @@ O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) c
 ### O que é Instâncias spot?
 é o leilão de máquinas que estão ociosas na aws, o desconto chega a 90%, mas você pode perder a qualquer instante o uso dessas máquinas.
 
-### O que é o Elastic Load Balance?
+### O que é o Elastic Load Balance (ELB)?
 é o serviço que distribui automaticamente o tráfego entre vários  recursos, como instâncias do Amazon EC2. Ele é execudado no nível de região é escalado automaticamente, antes de enviar ele faz um healf check pra verificar se a máquina destino está up. Embora o Elastic Load Balancing e o Amazon EC2 Auto Scaling sejam serviços separados, eles trabalham juntos para que os aplicativos executados no Amazon EC2 possam fornecer alto desempenho e disponibilidade.
 __Ele faz o balanceamento dentro da mesma Região entre AZs__. Com isso ele força a __Alta disponibilidade__.
 
-### Quais são os tipos de Load Balance?
-* Tem o Application Load Balancer -> funciona na camada 7
-* Tem o Network Load Balancer -> funciona na camada 4
+### Quais são os tipos de Load Balance (ELB)?
+* Tem o Application Load Balancer -> funciona na camada 7 (http e https)
+* Tem o Network Load Balancer -> funciona na camada 4 (tcp nível de rede)
 
 ### O que é o AMI?
 O amazon machine image é a imagem do sistema operacional e seus softwares(se instalado na imagem)
@@ -77,7 +77,7 @@ O Simple Queue Service é o serviço de fila da AWS que permite que envia, armaz
 ## Serviços de container e Servless
 
 ### O que é o AWS Lambda?
-É o serviço servless da AWS. Permite fazer o upload do código, configurar o gatilho (trigger) para execução do código e aguardar a execução. Esse ambiente é altamente escalavel e auto dimensionável. Adequado para processamento de até 15 min.
+É o serviço servless da AWS. Permite fazer o upload do código, configurar o gatilho (trigger) para execução do código e aguardar a execução. Esse ambiente é altamente escalavel e auto dimensionável. Adequado para processamento de até no máximo 15 min.
 
 ### O que é o ECS?
 O Amazon Elastic Container Service é um sistema de gerenciamento de contêineres (Compatível com Docker) altamente dimensionável e de alto desempenho que permite executar e dimensionar aplicativos em contêineres na AWS.
@@ -194,7 +194,7 @@ O Identity and Access Management é o controle com segurança de acesso, nele vo
 Pelo AIM você cria e gerencia usuários, policy e roles.
 
 ### Qual a diferença entre role e policy?
-* A __role__ é a autorização de serviço para serviço. É uma permissão temporária(15 minutos até 36 horas).
+* A __role__ é a autorização de serviço para serviço.Ela não é associada a usuários ou grupo, É simplesmente uma regra que diz que um __serviço A pode acessar os recursos do serviço B__.
 * A __policy__ é a autorização entre grupo de usuário para serviço. Policy não é para usuário e sim para grupo, ela restringe o uso de SERVIÇO.
 Exemplo de policy de serviço: O grupo de usuários não podem acessar os serviços de Lambda. 
 
