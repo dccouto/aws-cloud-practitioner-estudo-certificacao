@@ -1,4 +1,4 @@
-# Resumo para certificação AWS Practitioner
+# Resumo para certificação AWS Cloud Practitioner
 
 ## Introdução a Nuvem AWS
 
