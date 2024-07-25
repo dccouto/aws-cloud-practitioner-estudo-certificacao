@@ -1,4 +1,4 @@
-# Resumo para certificação AWS Cloud Practitioner
+# Guia de bolso para certificação AWS Cloud Practitioner
 
 ## Introdução a Nuvem AWS
 
