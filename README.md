@@ -21,9 +21,8 @@ Linha de comando (console), GUI (Site da AWS) e SDK
 
 ### Free tier
 Há 3 tipos de serviços gratuítos na AWS, são eles:
-* __Trial__: Grátis por 2 meses.
-* __12 meses__: Grátis por 12 meses apartir da abertura da conta.
-* __Always Free__: Sempre grátis com limites mensal. VMs gratuítas são da família t2 micro e tem limite de 750 horas por mês.
+* Novos clientes da AWS podem começar a usar gratuitamente o nível gratuito da AWS. Ganhe créditos de USD 100 no cadastro e até USD 100 a mais para ganhar ao explorar os principais serviços da AWS. Teste os serviços da AWS com o plano gratuito por até 6 meses. Você não será cobrado a menos que escolha o plano pago, que permite escalar suas operações e obter acesso a mais de 150 serviços da AWS.
+* https://aws.amazon.com/pt/free/
 
 ### Qual a diferença entre Master Account e Root Account?
 Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
