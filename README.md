@@ -21,8 +21,11 @@ Linha de comando (console), GUI (Site da AWS) e SDK
 
 ### Free tier
 
-** Novos clientes da AWS podem começar a usar gratuitamente o nível gratuito da AWS. Ganhe créditos de USD 100 no cadastro e até USD 100 a mais para ganhar ao explorar os principais serviços da AWS. Teste os serviços da AWS com o plano gratuito por até 6 meses. Você não será cobrado a menos que escolha o plano pago, que permite escalar suas operações e obter acesso a mais de 150 serviços da AWS.
-* https://aws.amazon.com/pt/free/
+* Novos clientes da AWS podem começar gratuitamente com o Nível Gratuito da AWS.
+Receba US$ 100 em créditos ao se cadastrar e ganhe até mais US$ 100 conforme explora os principais serviços da plataforma.
+Você pode testar os serviços da AWS por até 6 meses com o plano gratuito, sem custo ou compromisso.
+Não haverá cobrança, a menos que opte pelo plano pago, que oferece escalabilidade para suas operações e acesso completo a mais de 150 serviços da AWS.
+  [Saiba mais no site oficial da AWS](https://aws.amazon.com/pt/free/)
 
 ### Qual a diferença entre Master Account e Root Account?
 Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
