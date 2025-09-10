@@ -1,3 +1,9 @@
+Se este repositório te ajudou 🙌 <br>
+<a href="https://user-images.githubusercontent.com/53017748/175069759-6bf2473d-6f3c-4b0d-a694-2d86f46d39c4.png">
+  <img src="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000" alt="QR Code" width="30"/>
+</a>
+
+
 # Guia de bolso para certificação AWS Cloud Practitioner
 
 ## Introdução a Nuvem AWS
