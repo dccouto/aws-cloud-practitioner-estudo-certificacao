@@ -1,0 +1,24 @@
+{
+  "name": "guia-aws-cloud-practitioner",
+  "version": "1.0.0",
+  "description": "Landing page com checkout via Pix e liberação controlada do ebook Guia AWS Cloud Practitioner 2025.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "add-payment": "node scripts/addPayment.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dccouto/aws-cloud-practitioner-estudo-certificacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dccouto/aws-cloud-practitioner-estudo-certificacao/issues"
+  },
+  "homepage": "https://github.com/dccouto/aws-cloud-practitioner-estudo-certificacao#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
