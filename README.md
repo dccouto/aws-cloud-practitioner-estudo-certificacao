@@ -1,8 +1,9 @@
-Se este repositório te ajudou? 🙌 Ajude a manter o reposítorio atualizado! <br>
-<a href="https://user-images.githubusercontent.com/53017748/175069759-6bf2473d-6f3c-4b0d-a694-2d86f46d39c4.png">
-  <img src="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000" alt="QR Code" width="30"/>
-</a>
+💙 Gostou deste repositório?
 
+Se este repositório foi útil pra você 🙌, considere apoiar o projeto e ajudar a mantê-lo sempre atualizado!
+Basta escanear o QR Code abaixo 💡
+
+<a href="https://user-images.githubusercontent.com/53017748/175069759-6bf2473d-6f3c-4b0d-a694-2d86f46d39c4.png" target="_blank"> <img src="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000" alt="QR Code" width="35"/> </a>
 
 # Guia de bolso para certificação AWS Cloud Practitioner
 
