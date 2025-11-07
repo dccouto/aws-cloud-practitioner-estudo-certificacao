@@ -248,7 +248,7 @@
         <h2>Pagamento via Pix</h2>
         <p>
           Escaneie o QR Code ou copie o código Pix abaixo. Após o pagamento, envie o comprovante para
-          <a href="mailto:contato@example.com">contato@example.com</a>.
+          <a href="mailto:contato@example.com">contato@example.com</a> e preencha o formulário para agilizar a validação.
         </p>
         <div class="pix-box">
           <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020126580014BR.GOV.BCB.PIX0114+55119999999990203Pix5204000053039865802BR5911Nome Exemplo6009Sao Paulo62070503***6304ABCD" alt="QR Code Pix" />
@@ -259,17 +259,25 @@
           </div>
         </div>
         <hr />
-        <h3>Já pagou? Libere seu download</h3>
-        <form id="download-form" class="form">
+        <h3>Já pagou? Avise a equipe para liberar o ebook</h3>
+        <form id="notify-form" class="form">
+          <div class="form__group">
+            <label for="name">Seu nome completo</label>
+            <input type="text" id="name" name="name" required />
+          </div>
           <div class="form__group">
             <label for="email">E-mail usado no comprovante</label>
             <input type="email" id="email" name="email" required />
           </div>
           <div class="form__group">
-            <label for="token">Código de acesso recebido por e-mail</label>
-            <input type="text" id="token" name="token" required />
+            <label for="pixReference">Referência do pagamento (ID, chave Pix ou mensagem)</label>
+            <input type="text" id="pixReference" name="pixReference" />
           </div>
-          <button type="submit" class="btn btn--primary">Liberar download</button>
+          <div class="form__group">
+            <label for="message">Observações adicionais (opcional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Ex.: horário do pagamento, telefone para contato, dúvidas específicas"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Enviar comprovante</button>
           <p class="form__feedback" id="form-feedback" role="alert"></p>
         </form>
       </div>

@@ -286,9 +286,9 @@ pandoc ebook/guia-aws-cloud-practitioner-2025.md -o guia-aws-cloud-practitioner-
 ---
 
 ### Como vender este ebook
-- Execute a landing page em `public/` com `npm start` e personalize a chave Pix real no modal de pagamento.
-- Gere códigos de acesso após confirmar o pagamento com `npm run add-payment -- --email cliente@exemplo.com`.
-- Consulte `docs/venda-ebook.md` para o passo a passo completo de operação, segurança e customização.
+- Configure a chave Pix real e os textos da landing page em `public/index.html`.
+- Defina as credenciais SMTP no arquivo `.env` para receber um e-mail quando um cliente enviar o comprovante.
+- Execute `npm start` para testar localmente e consulte `docs/venda-ebook.md` para ver o fluxo de atendimento completo.
 
 ---
 

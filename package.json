@@ -4,8 +4,7 @@
   "description": "Landing page com checkout via Pix e liberação controlada do ebook Guia AWS Cloud Practitioner 2025.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "add-payment": "node scripts/addPayment.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,8 @@
   },
   "homepage": "https://github.com/dccouto/aws-cloud-practitioner-estudo-certificacao#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "nodemailer": "^6.9.15"
   }
 }

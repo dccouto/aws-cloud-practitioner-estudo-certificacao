@@ -1,6 +1,6 @@
-## Como vender o ebook com controle de acesso via Pix
+## Como vender o ebook com confirmação manual via Pix
 
-Este guia explica como configurar a landing page, validar pagamentos e liberar o download do ebook apenas para quem pagou via Pix.
+A landing page captura os dados de compradores e envia um e-mail para você validar o Pix antes de entregar o ebook manualmente. Siga os passos abaixo.
 
 ### 1. Preparar o ambiente
 
@@ -8,69 +8,62 @@ Este guia explica como configurar a landing page, validar pagamentos e liberar o
    ```bash
    npm install
    ```
-2. Defina a chave Pix real substituindo o texto de exemplo no arquivo `public/index.html`:
-   - Atualize a URL do QR Code (`src`).
-   - Cole o código “copia e cola” verdadeiro dentro da `<textarea id="pix-code">`.
-   - Ajuste o e-mail de suporte (`contato@example.com`) para o endereço comercial que receberá comprovantes.
+2. Configure sua chave Pix real no modal de pagamento (`public/index.html`):
+   - Atualize a imagem do QR Code (`src` do `<img>`).
+   - Substitua o conteúdo da `<textarea id="pix-code">` pelo código “copia e cola” verdadeiro.
+   - Ajuste o e-mail de suporte (`contato@example.com`) para o endereço comercial correto.
+3. Opcional: personalize textos, preço (R$ 9,99) e cores na landing page (`public/index.html`, `public/styles.css`).
 
-3. Opcional: personalize cores, textos e preço na landing page (`public/index.html` e `public/styles.css`).
+### 2. Configurar envio de e-mail
 
-### 2. Executar a landing page
+O backend usa SMTP para enviar notificações. Duplique o arquivo `.env.example` para `.env` e preencha com os dados do seu provedor (ex.: Gmail, Outlook, Amazon SES):
 
-Inicie o servidor em ambiente local:
-```bash
-npm start
 ```
-O site ficará disponível em `http://localhost:3000`.
+SMTP_HOST=smtp.seuprovedor.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=usuario@seuprovedor.com
+SMTP_PASS=senha-ou-token
+NOTIFY_EMAIL=destino@seu-negocio.com
+```
 
-Para publicar em produção (VPS, EC2, Railway, Render etc.), certifique-se de:
-- Configurar a variável de ambiente `PORT` (se o provedor exigir).
-- Manter a pasta `ebook/` inacessível diretamente pelo servidor web (express já faz isso).
+- `NOTIFY_EMAIL` é para onde o aviso será enviado (pode ser o mesmo que `SMTP_USER`).
+- Se usar Gmail, habilite app password.
+- Para port 465, defina `SMTP_SECURE=true`.
 
-### 3. Registrar pagamentos confirmados
+### 3. Testar localmente
 
-1. Após receber e validar o comprovante Pix, gere um código de acesso para o cliente:
+1. Rode o servidor:
    ```bash
-   npm run add-payment -- --email cliente@exemplo.com --pix 1234567890 --downloads 3
+   npm start
    ```
-   - `--email`: obrigatoriamente o e-mail informado pelo cliente.
-   - `--pix`: identificação do pagamento (opcional, mas útil para auditoria).
-   - `--downloads`: limite de downloads permitidos (padrão: 3).
+2. Acesse `http://localhost:3000`, preencha o formulário com dados de teste e verifique se o e-mail chega.
 
-2. O comando grava um registro em `data/payments.json` e retorna o código de acesso:
-   ```
-   Código de acesso: ab12cd34
-   ```
+### 4. Publicar em produção
 
-3. Envie este código ao cliente por e-mail. Ele deverá informar o **mesmo e-mail** e o **código de acesso** no formulário da landing page para liberar o download.
+- Hospedagem recomendada: serviços que suportam Node.js (Railway, Render, Fly.io, AWS, VPS etc.).
+- Defina as variáveis de ambiente com os mesmos valores do `.env`.
+- Fique atento ao campo `PORT` exigido pelo provedor.
+- Para usar GitHub Pages, publique apenas a pasta `public/` (front-end). O backend deve rodar em outro provedor e a URL do fetch deverá ser atualizada.
 
-### 4. Fluxo do cliente
+### 5. Fluxo de atendimento
 
-1. Cliente clica em “Comprar agora”, realiza o Pix e envia o comprovante por e-mail.
-2. Você valida o pagamento e gera o código com `npm run add-payment`.
-3. Cliente abre novamente o modal na landing page, preenche e-mail + código, e o download é liberado.
-4. Cada download consome 1 contador; ao atingir o limite (`maxDownloads`), o código expira automaticamente.
+1. Cliente paga via Pix usando o QR Code / código “copia e cola”.
+2. Ele envia comprovante e dados pelo formulário.
+3. Você recebe um e-mail com nome, e-mail, referência do pagamento e observações.
+4. Valide o Pix manualmente e envie o ebook (PDF/ZIP) pelo e-mail informado.
 
-### 5. Arquivo do ebook
+### 6. Entrega do ebook
 
-- O arquivo entregue é `ebook/guia-aws-cloud-practitioner-2025.zip` (contém a versão Markdown).
-- Substitua por um PDF oficial, se preferir:
-  1. Gere o PDF por `pandoc`, Google Docs ou outra ferramenta.
-  2. Salve-o como `ebook/guia-aws-cloud-practitioner-2025.pdf`.
-  3. Atualize `server.js`, alterando `EBOOK_FILENAME` para o novo arquivo.
+- O repositório contém o arquivo `ebook/guia-aws-cloud-practitioner-2025.zip` (Markdown).
+- Gere um PDF oficial com a ferramenta de sua preferência e armazene-o em local seguro.
+- Envie o PDF ou pacote desejado diretamente ao cliente após confirmar o pagamento.
 
-### 6. Segurança e boas práticas
+### 7. Boas práticas
 
-- Faça backup periódico de `data/payments.json`, pois ele é o registro de quem comprou.
-- Use HTTPS em produção (configuração do provedor ou proxy reverso).
-- Troque a chave Pix e tokens QR periodicamente.
-- Atualize depoimentos e prova social conforme coletar feedbacks reais.
+- Utilize HTTPS na hospedagem.
+- Mantenha registro das vendas (planilha ou CRM).
+- Atualize depoimentos e suporte conforme receber feedback real.
+- Monitore caixa de entrada e configure filtros para não perder notificações.
 
-### 7. Suporte e customização
-
-- Textos da landing page: `public/index.html`.
-- Estilos visuais: `public/styles.css`.
-- Lógica de download e rate limit: `server.js`.
-- Script de geração de tokens: `scripts/addPayment.js`.
-
-Com isso, o ebook só é liberado para quem possui um código de acesso gerado após a confirmação do pagamento via Pix. Ajuste o fluxo conforme a escala do seu negócio (ex.: integrar com automações de e-mail, CRM ou automação da confirmação Pix).*** End Patch
+Com isso, todo pagamento gera um e-mail de aviso e você mantém o controle manual sobre a entrega do ebook. Ajuste o fluxo conforme sua operação crescer (integração com automações, CRM, ferramentas de e-mail marketing etc.).*** End Patch

@@ -54,29 +54,31 @@ copyButtons.forEach((button) => {
   });
 });
 
-const downloadForm = document.getElementById("download-form");
+const notifyForm = document.getElementById("notify-form");
 const feedbackEl = document.getElementById("form-feedback");
 
-if (downloadForm) {
-  downloadForm.addEventListener("submit", async (event) => {
+if (notifyForm) {
+  notifyForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    feedbackEl.textContent = "Validando pagamento...";
+    feedbackEl.textContent = "Enviando seus dados...";
     feedbackEl.classList.remove("form__feedback--error", "form__feedback--success");
 
-    const formData = new FormData(downloadForm);
+    const formData = new FormData(notifyForm);
     const payload = {
+      name: formData.get("name")?.trim(),
       email: formData.get("email")?.trim(),
-      token: formData.get("token")?.trim(),
+      pixReference: formData.get("pixReference")?.trim(),
+      message: formData.get("message")?.trim(),
     };
 
-    if (!payload.email || !payload.token) {
-      feedbackEl.textContent = "Preencha todos os campos.";
+    if (!payload.name || !payload.email) {
+      feedbackEl.textContent = "Informe seu nome e e-mail para prosseguir.";
       feedbackEl.classList.add("form__feedback--error");
       return;
     }
 
     try {
-      const response = await fetch("/api/check-access", {
+      const response = await fetch("/api/report-payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,17 +89,12 @@ if (downloadForm) {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result?.message || "Não foi possível validar o pagamento.");
+        throw new Error(result?.message || "Não foi possível enviar sua mensagem.");
       }
 
-      feedbackEl.textContent = "Pagamento confirmado! O download será iniciado em instantes.";
+      feedbackEl.textContent = result?.message ?? "Dados enviados com sucesso!";
       feedbackEl.classList.add("form__feedback--success");
-
-      if (result?.downloadUrl) {
-        setTimeout(() => {
-          window.location.href = result.downloadUrl;
-        }, 1200);
-      }
+      notifyForm.reset();
     } catch (error) {
       feedbackEl.textContent = error.message;
       feedbackEl.classList.add("form__feedback--error");

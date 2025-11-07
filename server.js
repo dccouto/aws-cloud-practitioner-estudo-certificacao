@@ -1,14 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const fs = require("fs").promises;
-const crypto = require("crypto");
+const nodemailer = require("nodemailer");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
-const PAYMENTS_PATH = path.join(ROOT_DIR, "data", "payments.json");
-const EBOOK_FILENAME = "guia-aws-cloud-practitioner-2025.zip";
-const EBOOK_PATH = path.join(ROOT_DIR, "ebook", EBOOK_FILENAME);
 
 app.use(express.json());
 
@@ -23,103 +20,93 @@ app.use(
   })
 );
 
-async function loadPayments() {
-  try {
-    const raw = await fs.readFile(PAYMENTS_PATH, "utf-8");
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) {
-      return parsed;
-    }
-    return [];
-  } catch (error) {
-    if (error.code === "ENOENT") {
-      await fs.writeFile(PAYMENTS_PATH, JSON.stringify([], null, 2));
-      return [];
-    }
-    console.error("[payments] erro ao carregar arquivo", error);
-    return [];
-  }
+const smtpConfig = {
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: process.env.SMTP_SECURE === "true" || Number(process.env.SMTP_PORT) === 465,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+};
+
+let transporter = null;
+
+if (smtpConfig.host && smtpConfig.auth.user && smtpConfig.auth.pass) {
+  transporter = nodemailer.createTransport(smtpConfig);
+  transporter.verify().catch((error) => {
+    console.error("[email] falha ao verificar as credenciais SMTP:", error);
+  });
+} else {
+  console.warn("[email] Configurações SMTP não definidas. O envio de e-mails não funcionará.");
 }
 
-async function savePayments(data) {
-  await fs.writeFile(PAYMENTS_PATH, JSON.stringify(data, null, 2));
+function escapeHtml(input = "") {
+  return String(input)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
-app.post("/api/check-access", async (req, res) => {
-  const { email, token } = req.body ?? {};
-
-  if (!email || !token) {
-    return res.status(400).json({ message: "Informe e-mail e código de acesso." });
+app.post("/api/report-payment", async (req, res) => {
+  if (!transporter) {
+    return res.status(500).json({
+      message:
+        "Configuração de e-mail indisponível. Entre em contato diretamente pelo e-mail informado no site.",
+    });
   }
 
-  const normalizedEmail = String(email).trim().toLowerCase();
-  const sanitizedToken = String(token).trim();
+  const { name, email, pixReference, message } = req.body ?? {};
 
-  try {
-    const payments = await loadPayments();
-
-    const record = payments.find(
-      (item) =>
-        item.token === sanitizedToken &&
-        item.email === normalizedEmail &&
-        item.status === "approved"
-    );
-
-    if (!record) {
-      return res
-        .status(401)
-        .json({ message: "Não encontramos um pagamento confirmado para estes dados." });
-    }
-
-    if (record.maxDownloads && record.downloads >= record.maxDownloads) {
-      return res.status(403).json({
-        message: "O limite de downloads para este código foi atingido. Solicite um novo acesso.",
-      });
-    }
-
-    record.downloads = (record.downloads || 0) + 1;
-    record.lastDownloadAt = new Date().toISOString();
-    const downloadToken = crypto.randomBytes(16).toString("hex");
-    record.lastDownloadToken = downloadToken;
-    await savePayments(payments);
-
-    res.json({ downloadUrl: `/api/download?token=${downloadToken}` });
-  } catch (error) {
-    console.error("[api/check-access] erro inesperado", error);
-    res.status(500).json({ message: "Não foi possível validar o pagamento. Tente novamente." });
+  if (!name || !email) {
+    return res.status(400).json({ message: "Informe seu nome e e-mail para prosseguir." });
   }
-});
 
-app.get("/api/download", async (req, res) => {
-  const { token } = req.query;
-  if (!token) {
-    return res.status(400).json({ message: "Token de download inválido." });
+  const notifyEmail = process.env.NOTIFY_EMAIL || process.env.SMTP_USER;
+
+  if (!notifyEmail) {
+    return res.status(500).json({
+      message:
+        "Configuração de notificação não encontrada. Entre em contato diretamente pelo e-mail informado no site.",
+    });
   }
 
   try {
-    const payments = await loadPayments();
-    const record = payments.find(
-      (item) => item.lastDownloadToken && item.lastDownloadToken === token
-    );
-
-    if (!record) {
-      return res.status(401).json({ message: "Token de download expirado ou inválido." });
-    }
-
-    record.lastDownloadToken = null;
-    await savePayments(payments);
-
-    return res.download(EBOOK_PATH, EBOOK_FILENAME, (error) => {
-      if (error) {
-        console.error("[api/download] erro ao enviar ebook", error);
-        if (!res.headersSent) {
-          res.status(500).json({ message: "Falha ao enviar o arquivo. Tente novamente." });
+    await transporter.sendMail({
+      from: `"Landing Page AWS" <${process.env.SMTP_USER}>`,
+      to: notifyEmail,
+      subject: "Novo pagamento aguardando validação (ebook AWS)",
+      replyTo: email,
+      html: `
+        <h2>Novo potencial cliente do ebook</h2>
+        <p><strong>Nome:</strong> ${escapeHtml(name)}</p>
+        <p><strong>E-mail informado:</strong> ${escapeHtml(email)}</p>
+        ${
+          pixReference
+            ? `<p><strong>ID do pagamento / mensagem:</strong> ${escapeHtml(pixReference)}</p>`
+            : "<p><strong>ID do pagamento / mensagem:</strong> não informado</p>"
         }
-      }
+        ${
+          message
+            ? `<p><strong>Observações adicionais:</strong><br/>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>`
+            : ""
+        }
+        <hr/>
+        <p>Entre em contato com o cliente para confirmar o Pix e liberar o ebook manualmente.</p>
+      `,
+    });
+
+    res.json({
+      message:
+        "Obrigado! Recebemos sua solicitação. Após validar o Pix, enviaremos o ebook por e-mail.",
     });
   } catch (error) {
-    console.error("[api/download] erro inesperado", error);
-    res.status(500).json({ message: "Não foi possível concluir o download." });
+    console.error("[api/report-payment] erro ao enviar e-mail", error);
+    res
+      .status(500)
+      .json({ message: "Não foi possível enviar sua mensagem. Tente novamente mais tarde." });
   }
 });
 
