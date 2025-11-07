@@ -1,321 +1,291 @@
-Se este repositório te ajudou? 🙌 Ajude a manter o reposítorio atualizado! <br>
+Se este repositório te ajudou, considere apoiar a manutenção e evolução deste guia 🙌  
 <a href="https://user-images.githubusercontent.com/53017748/175069759-6bf2473d-6f3c-4b0d-a694-2d86f46d39c4.png">
   <img src="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000" alt="QR Code" width="30"/>
 </a>
 
-
-# Guia de bolso para certificação AWS Cloud Practitioner
-
-## Introdução a Nuvem AWS
-
-A nuvem é um conjunto de servidores que ficam em outra empresa e você paga somente pelo que utiliza.
-Os modelos de implantação de nuvem é Híbrida(on premises e nuvem), 100% Nuvem e Local(nuvem privada - virtualização do servidor local).
-
-* Região = é o conjunto de Zona de disponibilidade (pelo menos 2), são áreas geograficamente isoladas.
-* Zona de disponibilidade(AZ) = Uma Zona de Disponibilidade é um único data center ou um grupo de data centers em uma Região. As Zonas de Disponibilidade estão localizadas a dezenas de quilômetros de distância umas das outras. A proximidade é suficiente para haver baixa latência.
-* Ponto de Presença - CDN (Edge Locations) = é uma rede inteligente de distribuição de conteúdos para acelerar a comunicação entre as AZs distantes, também faz cache.
-
-### Como escolher uma região?
-Avaliar a governança de dados e requisitos legais, Latência, Serviços disponíveis na região(nem todos os serviços estão disponíveis em todas as regiões) e o Preço varia de acordo com a Região(no Brasil costuma ser 50% mais caro do que a Virginia. Devido a impostos, custo de energia, etc). 
-
-### Quais os Tipos de Interação com a AWS?
-Linha de comando (console), GUI (Site da AWS) e SDK
-
-### Criação de conta na AWS, informações básicas.
-* Pra cada sub-account, é necessário ter uma e-mail único;
-* A conta padrão (root account) não deve ser usada como principal.
-
-### Free tier
-
-* Novos clientes da AWS podem começar gratuitamente com o Nível Gratuito da AWS.
-Receba US$ 100 em créditos ao se cadastrar e ganhe até mais US$ 100 conforme explora os principais serviços da plataforma.
-Você pode testar os serviços da AWS por até 6 meses com o plano gratuito, sem custo ou compromisso.
-Não haverá cobrança, a menos que opte pelo plano pago, que oferece escalabilidade para suas operações e acesso completo a mais de 150 serviços da AWS.
-  [Saiba mais no site oficial da AWS](https://aws.amazon.com/pt/free/)
-
-### Qual a diferença entre Master Account e Root Account?
-Master Account é a primeira conta criada na AWS e Root Account é o usuário dono de uma AWS Account.
-
-## Conceitos básicos da nuvem
-
-### O que é o EC2?
-O elestic compute cloud são as máquinas virtuais dentro de um host(servidor) compartilhado.
-
-### O que é o EC2 Auto Scaling?
-é o serviço que aumenta ou reduz a escala horizontal das máquinas de acordo com a quantidade de demanda de uso.
-
-### O que é Instâncias spot?
-é o leilão de máquinas que estão ociosas na aws, o desconto chega a 90%, mas você pode perder a qualquer instante o uso dessas máquinas.
-
-### O que é o Elastic Load Balance (ELB)?
-é o serviço que distribui automaticamente o tráfego entre vários  recursos, como instâncias do Amazon EC2. Ele é execudado no nível de região é escalado automaticamente, antes de enviar ele faz um healf check pra verificar se a máquina destino está up. Embora o Elastic Load Balancing e o Amazon EC2 Auto Scaling sejam serviços separados, eles trabalham juntos para que os aplicativos executados no Amazon EC2 possam fornecer alto desempenho e disponibilidade.
-__Ele faz o balanceamento dentro da mesma Região entre AZs__. Com isso ele força a __Alta disponibilidade__.
-
-### Quais são os tipos de Load Balance (ELB)?
-* Tem o Application Load Balancer -> funciona na camada 7 (http e https)
-* Tem o Network Load Balancer -> funciona na camada 4 (tcp nível de rede)
-
-### O que é o AMI?
-O amazon machine image é a imagem do sistema operacional e seus softwares(se instalado na imagem)
-
-### O que é o Virtual Private Cloud - VPC
-Rede virtual privada(vpn) na nuvem, que pode ser feito sub-redes públicas e privadas.
-
-### O que é o Gateway da Internet?
-Um gateway da internet é uma conexão entre uma VPC e a internet.
-
-### O que é o AWS Direct Connect?
-É uma conexão física(fibra) exclusiva, dedicada e privada conectada do seu servidor a AWS.
-
-### O que é o grupo de segurança (Security Group)?
-É o ip tables, um __firewall__ da rede. Por padrão nenhum tráfego de entrada é permitido e to tráfego de saída é permitido. No grupo de segurança podemos apenas dar "Permissão", não possui regra de "Negação".
-
-### O que é o Route53?
-É o serviço de dns da aws.
-
-### O que é o SNS?
-O Simple Notification Service é o serviço de notificação e mensagens da aws (publicação/assinatura). Parecido com SQS com a diferença que também pode enviar mensagens á usuários finais e dividido em tópicos. (exemplo enviar um e-mail)
-
-### O que é o SQS?
-O Simple Queue Service é o serviço de fila da AWS que permite que envia, armazena e recebe mensagem entre componentes de software em qualquer volume sem perder mensagens.
-
-### O que é o SES?
-é um provedor de serviços de e-mail na nuvem que pode ser integrado a qualquer aplicação para envio de e-mails em massa. (Pode ser usado para email marketing)
-
-## Serviços de container e Servless
-
-### O que é o AWS Lambda?
-É o serviço servless da AWS. Permite fazer o upload do código, configurar o gatilho (trigger) para execução do código e aguardar a execução. Esse ambiente é altamente escalavel e auto dimensionável. Adequado para processamento de até no máximo 15 min.
-
-### O que é o ECS?
-O Amazon Elastic Container Service é um sistema de gerenciamento de contêineres (Compatível com Docker) altamente dimensionável e de alto desempenho que permite executar e dimensionar aplicativos em contêineres na AWS.
-
-### O que é o EKS?
-O Amazon Elastic Kubernetes Service é um serviço totalmente gerenciado que você pode usar para executar o Kubernetes na AWS.
-
-### O que é o AWS Fargate?
-é um mecanismo de computação sem servidor para contêineres. Ele funciona com o Amazon ECS e o Amazon EKS.
-Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. O AWS Fargate gerencia sua infraestrutura de servidor para você.
-
-### O que é o AWS Outposts?
-É o serviço da AWS que estender a infraestrutura e os serviços AWS para seu data center local.
-
-### O Amazon Athena?
-é um serviço de consultas interativas que facilita a análise de dados no Amazon S3 usando SQL padrão. O Athena não precisa de servidor. Portanto, não há infraestrutura para gerenciar e você paga apenas pelas consultas executadas. O Athena é fácil de usar.
-
-### O que é Kinesis?
-é um serviço de streaming de dados em tempo real.
-
-### O que é AWS Glue?
-é um serviço que oferece todos os recursos necessários para a integração dos dados, e assim é possível começar a analisar seus dados e usá-los em minutos, em vez de meses. A integração de dados é o processo de preparar e combinar os dados para análise, machine learning e desenvolvimento de aplicações.
-
-## Armazenamento
-
-### O que é o EBS?
-O elastic block store é o disco(HD) para as máquinas virtuais(EC2), não estão vinculados dentro da instância do EC2, então se encerrar uma instância do EC2, os dados no "HD" do EBS permanecem inalterados. Uma caracteristica é que ele não é dimensionável, caso ele esgote o tamanho terá que criar um outro. A AWS fornece a opção de backup incremental denominada Snapshot. OBS: O EC2 e o EBS PRECISAM estar dentro da MESMA AZ.
-
-### O que é o EFS?
-É um sistema de arquivos escalável usado com os serviços de nuvem AWS e recursos locais. À medida que você adiciona e remove arquivos, o Amazon EFS expande e retrai automaticamente. Ele pode dimensionar sob demanda para petabytes sem interromper os aplicativos. 
-
-### Comparação entre o Amazon EBS e o Amazon EFS:
-Um volume do __Amazon EBS__ armazena dados em uma _única_ Zona de Disponibilidade. Para anexar uma instância do Amazon EC2 a um volume do EBS, tanto a instância do Amazon EC2 quanto o volume do EBS devem residir na mesma Zona de Disponibilidade.
-O __Amazon EFS__ é um serviço regional. Ele armazena dados em _várias_ Zonas de Disponibilidade e entre elas. O armazenamento duplicado permite que você acesse dados simultaneamente de todas as Zonas de Disponibilidade na Região em que um sistema de arquivos está localizado. Além disso, os servidores locais podem acessar o Amazon EFS usando o AWS Direct Connect.
-
-### O que é o Elastic File System?
-É um sistema de arquivo nativo da nuvem, escalável e elastico para linux. Pode montar o diretórios em várias máquinas.
-
-### O que é o Instance Store?
-São "HDs" vinculados diretamente na instancia do EC2 em execução, se a instância for encerrada, os dados são perdidos.
-
-### O que é o S3?
-O simple storage service é o armazenamento para objetos (como se fosse um dropbox), tamanho máximo de um unico objeto é de 5TB
-
-### Quais são os tipos de armazenamentos do S3?
-* Glacier Deep Archive(muito frio) -> baixíssimo pra longo prazo (7 a 10 anos) mas tempo mínimo de 180 dias e até 12h para recuperar o arquivo.
-* Glacier(frio) -> baixo custo e até 3h a 5h para recuperar o arquivo tempo mínimo de permanência de 90 dias. Há também o __Instant Retrieval__(recupera o arquivo em segundos, mas custa caro quando isso é necessário)
-* S3 Standard Infrequent Access - IA (frio) -> Custo na hora de recuperar o objeto, indicado pra dados acessado com pouca frequência.
-* S3 One Zone - IA (quente) -> Uma unica zona de disponibilidade e custa 20% menos que o standart.
-* S3 Standart (quente) -> 3 zonas de disponibilidade ou mais
-* S3 Intelligente - tiering (é mais uma funcionalidade do que camada) -> 3 ou mais zonas de disponibilidades e Move automaticamente o objeto entre as clases com base no padrão de acesso.
-
-## Banco de Dados
-
-### O que é o RDS?
-O Relacionation Database Service é o serviço de banco de dados relacional (SQL) da aws. É como se fosse o EC2 com o banco de dados já configurado. O usuário não acessa a máquina toda, apenas o banco de dados. O Amazon RDS é um serviço gerenciado que automatiza tarefas como provisionamento de hardware, configuração de banco de dados, patch e backups.
-
-### O que é o Amazon Aurora?
-É um banco relacional de nivel empresarial, compatível com o MySQL ou o PostgreSQL, até 5x mais rápido que o MySQL padrão e 3x que o Postgre, faz backup contínuo para o S3. O preço é 1/10 do custo de bases de dados comerciais
-
-### O que é o DynamoDB?
-É o banco NoSQL da aws, serveless, autogerenciável, autoescalável e tem de resposta muito rápido.
-
-### O que é o Amazon Redshift?
-O Amazon Redshift é serviço de data warehouse que você pode usar para análise de big data. Ele oferece a capacidade de coletar dados de muitas fontes além de ajudar a entender relações e tendências em todos os seus dados.
-
-### O que é Amazon Neptune?
-é um serviço de banco de dados de grafos rápido, confiável e totalmente gerenciado que facilita a criação e a execução de aplicativos.
-
-### O que é o AWS DMS?
-O AWS Database Migration Service permite migrar bancos de dados relacionais e não relacionais e outros tipos de armazenamentos de dados para a AWS.
-Com o AWS DMS, você __move dados entre bancos de dados de origem e de destino__. Os bancos de dados de origem e de destino podem ser do __mesmo tipo ou de tipos diferentes__. Durante a migração, o banco de dados de origem permanece operacional, reduzindo o tempo de inatividade em qualquer aplicativo que dependa do banco de dados. 
-
-## Conecte e compartilhe seu dados
-
-### O que é o Direct Connect?
-É um serviço de link dedicado(link fisico) ligado de um datacenter a outro.(Baixa latência). É importante saber que o direct connect é para velocidade e VPN para segurança.
-
-### O que é o CloudFront?
-o AWS CloudFront é um serviço de CDN da web que acelera a distribuição do conteúdo estático e dinâmico da web, como arquivos .html, .css, .js e arquivos de imagem, para os usuários.
-Ela usa pontos de presença (Edge locations) espalhados pelo mundo pra ajudar a acelerar a comunicação. Elas estão fora das regions. Elas também realizam o serviço de DNS(Route 53).
-
-### O Amazon CloudSearch 
-é um serviço gerenciado na nuvem AWS com o qual é possível configurar, gerenciar e dimensionar uma solução de pesquisa para o seu site ou aplicativo de forma simples e econômica.
-
-## Automatize a implantação
-
-### O que é o CloudFormation?
-Ferramenta que provisiona recurso automaticamente a partir de um template yaml ou json(parecido com o terraform). Ele trata infraestrutura como código.
-
-### O que é o Elastic Beanstalk?
-A gerencia da infra é toda da aws, é possível subir o código da aplicação (exe: java, php...) e ele cria todos os recursos que é necessário. exemplo: banco de dados, s3 e tudo que precisar, porém o usuário não tem muito controle. O Serviço do Beanstalk não é cobrado $, o que é cobrado é os recursos de infraestrutura que ele provisonar. 
-
-### Diferença entre o CloudFormation e o Elastic Beanstalk?
-O CloudFormation provisiona infraestrutura para qualquer serviço dentro da AWS.
-O Elastic Beanstalk é feito para provisionar infraestrutura para aplicações WEB.
-
-## Segurança
-
-### Quais os conceitos de resposabilidade compartilhada?
-O Usuário é responsável pela segurnaca __na__ nuvem.
-A AWS é responsável pela segurnaca __da__ nuvem.
-![image](https://user-images.githubusercontent.com/53017748/171906239-338c4e21-a287-44a8-993c-577f7bfb5db9.png)
-
-
-### Quais as boas práticas de segurança?
-* Não use a conta root para subir serviços;
-* Habilite o MFA (Multiplo fator de autenticação) para o root account;
-* Crie contas individuais para usuários (IAM);
-* Preencha  os dados de contato para "Cobranças", "Operações" e "Segurança";
-
-### O que é o IAM?
-O Identity and Access Management é o controle com segurança de acesso, nele você diz quem vai acessar o quê. 
-Pelo AIM você cria e gerencia usuários, policy e roles.
-
-### Qual a diferença entre role e policy?
-* A __role__ é a autorização de serviço para serviço.Ela não é associada a usuários ou grupo, É simplesmente uma regra que diz que um __serviço A pode acessar os recursos do serviço B__.
-* A __policy__ é a autorização entre grupo de usuário para serviço. Policy não é para usuário e sim para grupo, ela restringe o uso de SERVIÇO.
-Exemplo de policy de serviço: O grupo de usuários não podem acessar os serviços de Lambda. 
-
-### Quais são as boas práticas de segurança?
-Excluir chaves de acesso do usuário root, criar um usuário do IAM, conceder acesso de administrador e usar as credenciais do IAM para interagir com a AWS, habilitar o MFA(Autenticador de 2 fatores).
-
-### O que é o Amazon Inspector?
-Realiza a avaliação das aplicações buscando vulnerabilidades.
-
-### O que é o Amazon GuardDuty?
-O Amazon GuardDuty é um serviço que fornece detecção inteligente de ameaças para sua infraestrutura e seus recursos AWS. Ele identifica ameaças monitorando continuamente a atividade da rede e o comportamento da conta no seu ambiente AWS.
-
-### O que é o AWS Shield?
-É um serviço de proteção contra ataque de DDOS. A versão Stardard(free), a versão Advanced(+-$3000/mês mas se vc sofrer perdas financeiras devido o ataque, vc é ressarcido).
-
-### O que é o AWS WAF?
-Firewall de aplicação web para filtar o tráfego de entrada detectando rastros de agentes mal intencionados.
-
-### O que é o AWS KMS?
-O AWS Key Management Service (AWS KMS) permite que você execute operações de criptografia pelo uso de chaves de criptografia.
-Você pode usar o AWS KMS para criar, gerenciar e usar chaves de criptografia. 
-
-### O que é o AWS Artifect?
-Ele fornece os relatórios de conformidade com os orgãos que a aws atende as leis e regulamentação.
-
-### O que é o AWS Organizations?
-É um local central para gerenciar várias contas da AWS, consolidar faturamento e agrupar hieraquicarmente as contas.
-
-## Monitoramento e Análise
-
-### O que é o CloudWatch?
-É o serviço de monitoramento de recursos da aws (uso de cpu, quantidade de vezes aque a pagina foi acessada, criar alarmes...), gerenciar várias métricas e configurar ações de alarme de acordo com os dados dessas métricas.
-
-### O que é o AWS CloudTrail?
-O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
-
-Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
-* O que é CloudTrail Insights? Esse recurso opcional permite que o CloudTrail detecte automaticamente atividades de API incomuns em sua conta AWS.
-
-### O que é o Trusted Advisor?
-O AWS Trusted Advisor é um serviço que fornece orientação para ajudá-lo a reduzir custos, aumentar a performance, melhorar a segurança, verifica a tolerância a falhas e os limites de serviço. Alguns recursos dele é gratuíta e outros vem agregado ao plano de suporte(a partir do Business), então se não tiver a assinatura mensal de suporte, não terá esse serviço.
-
-## Suporte e Definição de Preços
-
-### Quais são os Planos de Suporte?
-* Básico (grátis)-> Atendimento ao cliente, fóruns de suporte, Verificações de integridade de serviços.
-* Desenvolvedor ($29/mês)-> tudo do basico + Orientação sobre melhores práticas, Ferramentas de diagnóstico do cliente, suporte à arquitetura básica, um contato primário para abrir chamados (case) de suporte com SLA de 12h para sistemas que não está em produção e 24h para suporte geral.
-* Business (+-$100/mês)-> tudo do DEV + Orientação sobre arquitetura de aplicações, IAM para controlar o acesso de indivíduos ao AWS Support, AWS Trusted Advisor completo, Uma API para interagir com o Support Center e o Trusted Advisor, Suporte a Softwares de terceiro e SLA de 1h.
-* Empresarial (inicial de $15,000/mês)-> tudo do Business + Orientações sobre arquitetura de aplicações, Gerenciamento de eventos de infraestrutura, Gerente técnico da conta, Encaminhamento de casos prioritário, Analises empresariais de gerenciamento. SLA de 15 minutos para carga de trabalho crítica.
-
-### O que é um Suporte Case?
-É uma chamado ao time de suporte. Todos os chamado são denominados Case.
-
-### Quais os tipos de Cases que podem ser aberto no Support Center?
-* Service limit increase -> Solicitações para aumentar limites de recursos. Exemplo: aumentar o limite default de 10 EC2 para 50 EC2, sempres seleciona o Region e serviço.
-* Account and billing support -> Cases referente a conta e cobranças.
-* Technical support (Somente pra quem paga um plano de suporte) -> Suporte técnico.
-
-### Como você paga a AWS?
-#### Computação
-##### Pague conforme o uso
-EC2 Cobrado por hora ou segundo*(*somente linux).
-##### Savings Plans
-Preço mais baixo pro EC2, AWS lambda e AWS Fargate, diante de um compromisso de uso de 1 ou 3 anos. Nesse modelo, pode chegar numa economia de até 72% do custo de computação da AWS.
-##### Instâncias Reservadas
-Indicadas para utilização de recursos previsíveis, com desconto de até 75%. Deve se comprometer com um prazo de 1 a 3 anos, e há 3 opções de pagamento, tudo adiantado, adiantado parcialmente, ou sem adiantamento.
-##### Instâncias Spot
-Elas permite solicitar EC2 com desconto de até 90%, mas a AWS pode solicitar a qualquer momento a instância de volta, dando um tempo de 2 minutos.
-##### Host Dedicados
-São hosts físicos dedicados sem compartilhamento com outros usuários.
-
-*Economize ao reservar; Pague menos usando mais.
-* Armazenamento: Cobrado normamente por GB
-* Transferência de dados: A saída é cobrada(download), upload não é cobrado, cobrado por GB.
-
-### O que é a AWS Budgets?
-No AWS Budgets, você pode criar orçamentos para planejar o uso do serviço, os custos de serviço e as reservas de instâncias.
-As informações do AWS Budgets são atualizadas três vezes por dia. Isso ajuda você a definir com precisão a proximidade entre seu uso e os valores orçados ou limites de nível gratuito da AWS.
-No AWS Budgets, você também pode definir alertas personalizados para quando seu uso exceder (ou estiver prestes a exceder) o valor orçado.
-
-### O que é o AWS Cost Explorer?
-O AWS Cost Explorer é uma ferramenta que permite visualizar, interpretar e gerenciar seus custos e uso da AWS ao longo do tempo.
-O AWS Cost Explorer inclui um relatório básico dos custos e do uso dos cinco principais serviços da AWS de acúmulo de custos. Você pode aplicar filtros e grupos personalizados para analisar seus dados. Por exemplo, você pode exibir o uso de recursos no nível por hora.
-
-## Arquitetura
-
-### O que é o Well-Architected Framework?
-É um conjunto de boas práticas que me guiam no projeto de infraestrutura.
-É um questionário que contém perguntas sobre o seu ambiente da aws e que no final será emitido um relatório com os níveis de risco que você tem dentro da aws.
-São dicas separado e pilares (*Excelencia operacional, Segurança, Confiabilidade, Performance, Otimização de custo*) para melhorar seu ambiente da aws.
-Pode-se fazer uma Tag (Milestone) para marcar e medir pontos a partir que for evoluindo e melhorando a arquitetura. O Milestone é importante para acompanhar as evoluções da arquitetura a medida que vai respondendo o "formulário" do well-architected. É possível também gerar um relatório bem detalhado do momento atual.
-
-### Quais são os cinco pilares da estrutura?
-* Excelência Operacional
-* Segurança
-* Confiabilidade
-* Eficiência de performance
-* Otimização de custo
-
-## Migração e Inovação
-
-###  O que é o AWS CAF?
-O AWS Cloud Adoption Framework (AWS CAF) organiza orientações em seis áreas de foco chamadas __perspectivas__. Cada perspectiva aborda responsabilidades distintas. O processo de planejamento ajuda as pessoas certas em toda a organização a se prepararem para as mudanças futuras.
-
-Em geral, as perspectivas de __negócio, pessoas e governança__ se concentram nas capacidades comerciais, enquanto as perspectivas de __plataforma, segurança e operações__ se concentram em capacidades técnicas.
-
-### O que é o AWS Snow Family?
-A AWS Snow Family é uma coleção de dispositivos físicos para transporte físico de até exabytes de dados para dentro e para fora da AWS. 
-A AWS Snow Family consiste nos serviços __AWS Snowcone__(Capacidade de 8TB), __AWS Snowball__(Capacidade de 80TB) e __AWS Snowmobile__(100 petabytes).
-
-# O que é o Amazon QuickSight?
-É um serviço de business intelligence (BI) em escala de nuvem que você pode usar para fornecer easy-to-understandinsights para as pessoas com quem você trabalha, onde quer que estejam. Tipo um power BI
-
-# Preparação para a prova
-### Divisão de perguntas
-![image](https://user-images.githubusercontent.com/53017748/179562013-35c6d771-cb11-4d3d-89c0-f15dba44878b.png)
+# Guia de bolso AWS Certified Cloud Practitioner (2025)
+
+Bem-vindo(a) ao guia rápido e atualizado para a certificação **AWS Certified Cloud Practitioner (CLF-C02)**. O objetivo é oferecer uma referência prática para revisar os principais conceitos do exame, com foco em quem está iniciando sua jornada na nuvem AWS.
+
+- **Última atualização**: novembro de 2025  
+- **Versão do exame coberta**: CLF-C02 (lançado em 2023, atualmente em vigor)  
+- **Formato**: 65 questões (múltipla escolha e múltiplas respostas) • 90 minutos • US$ 100 • Disponível em português
+
+> ✅ Utilize este README como resumo rápido e acesse o eBook incluído no repositório para aprofundar cada tópico, roteiros de estudo e exercícios de revisão.
+
+---
+
+## Sumário
+- [1. Fundamentos de computação em nuvem](#1-fundamentos-de-computação-em-nuvem)
+- [2. Estrutura do exame CLF-C02](#2-estrutura-do-exame-clf-c02)
+- [3. Governança de contas e acesso](#3-governança-de-contas-e-acesso)
+- [4. Principais serviços por domínio](#4-principais-serviços-por-domínio)
+- [5. Segurança e conformidade](#5-segurança-e-conformidade)
+- [6. Precificação, faturamento e suporte](#6-precificação-faturamento-e-suporte)
+- [7. Observabilidade e gerenciamento](#7-observabilidade-e-gerenciamento)
+- [8. Arquitetura e boas práticas](#8-arquitetura-e-boas-práticas)
+- [9. Preparação e recursos de estudo](#9-preparação-e-recursos-de-estudo)
+- [10. Ebook complementar](#10-ebook-complementar)
+
+---
+
+## 1. Fundamentos de computação em nuvem
+
+- **Computação em nuvem**: entrega sob demanda de recursos de TI pela internet, com pagamento conforme o uso.
+- **Modelos de implantação**:
+  - **Nuvem pública**: recursos na AWS, totalmente gerenciados pela AWS.
+  - **Nuvem privada**: recursos dedicados a um cliente, podendo usar AWS Outposts para rodar serviços AWS on-premises.
+  - **Nuvem híbrida**: integra ambientes on-premises e AWS (Direct Connect + VPN, por exemplo).
+  - **Multicloud**: uso combinado de AWS com outras nuvens públicas (não é foco do exame, mas pode ser citado).
+- **Modelos de responsabilidade compartilhada**:
+  - AWS mantém a **segurança da nuvem** (infraestrutura, hardware, serviços gerenciados).
+  - Cliente mantém a **segurança na nuvem** (configuração de dados, redes, controles de acesso).
+
+### Conceitos globais
+- **Regiões**: conjuntos de zonas de disponibilidade (AZs) em uma área geográfica isolada.
+- **Zonas de disponibilidade (AZs)**: data centers discretos dentro de uma mesma região, com baixa latência entre si.
+- **Local Zones**: estendem serviços de região para áreas metropolitanas, reduzindo latência.
+- **Edge locations**: pontos de presença para serviços de borda (CloudFront, Route 53, Global Accelerator).
+
+### Como escolher a região correta?
+- **Requisitos legais e compliance** (LGPD, GDPR etc.).
+- **Latência percebida** pelo usuário final.
+- **Disponibilidade de serviços** (nem todos os serviços estão em todas as regiões).
+- **Custos** (refletindo impostos locais, energia e câmbio).
+
+### Maneiras de interagir com a AWS
+- **Console de Gerenciamento da AWS (GUI)**
+- **AWS CLI** (linha de comando; suporta AWS CloudShell no navegador)
+- **SDKs e APIs** para automação e integração
+- **Infraestrutura como código** (CloudFormation, CDK, Terraform)
+
+### Conta AWS e nível gratuito (Free Tier)
+- É obrigatório um **e-mail único** para cada conta.
+- **Conta root**: acesso ilimitado, deve ser protegida com MFA e usada apenas para tarefas críticas.
+- **Free Tier**:
+  - 12 meses gratuitos para serviços selecionados (ex.: 750 horas/mês de EC2 t2.micro ou t4g.micro).
+  - Ofertas “Always Free” (ex.: 1 milhão de solicitações Lambda/mês, 25 GB de armazenamento S3 Glacier Deep Archive).
+  - Ofertas de testes por curto período (ex.: Amazon SageMaker Studio Lab).
+  - Confira sempre a página oficial: [https://aws.amazon.com/free](https://aws.amazon.com/free)
+- Créditos promocionais podem ser obtidos em programas como **AWS Educate**, **Activate**, treinamentos oficiais e eventos.
+
+---
+
+## 2. Estrutura do exame CLF-C02
+
+| Domínio | Peso | Tópicos chave |
+| --- | --- | --- |
+| 1. Conceitos de Nuvem | 26% | Benefícios, princípios de arquitetura, modelos operacionais |
+| 2. Segurança e Conformidade | 25% | IAM, segurança, governança, compliance |
+| 3. Tecnologia | 33% | Principais serviços, implantação, recursos de suporte |
+| 4. Faturamento e Precificação | 16% | Modelos de preço, suporte, ferramentas de gestão |
+
+### Estrutura típica das questões
+- Situações do dia a dia de empresas de todos os portes.
+- Cobrança por entender **quando** e **por que** escolher um serviço, mais do que sua configuração.
+- Atenção especial a cenários de segurança, responsabilidades, custo e resiliência.
+
+### Estratégia de estudo sugerida
+1. Revisar fundamentos (nuvem, regiões, segurança compartilhada).
+2. Mapear serviços principais por domínio.
+3. Praticar com quizzes oficiais e simulados.
+4. Revisar cenários de faturamento e suporte.
+5. Agendar a prova com antecedência (disponível em Pearson VUE, PSI ou online proctored).
+
+---
+
+## 3. Governança de contas e acesso
+
+- **AWS Organizations**: agrupa várias contas, consolida faturamento, aplica políticas (SCPs).
+- **Service Control Policies (SCPs)**: definem permissões máximas por conta ou unidade organizacional.
+- **Conta de gerenciamento (antiga master)** coordena contas-membro; não é igual à conta root.
+- **IAM (Identity and Access Management)**:
+  - **Usuários**: identidades individuais.
+  - **Grupos**: coleção de usuários com permissões comuns.
+  - **Políticas (policies)**: documento JSON que define permissões (Allow/Deny).
+  - **Funções (roles)**: permissões atribuídas a serviços ou identidades federadas (ex.: EC2 acessando S3).
+- **IAM Identity Center (antigo AWS SSO)**: autenticação centralizada para múltiplas contas e aplicações.
+- **MFA** obrigatório para root; recomendado para usuários privilegiados.
+- **AWS Control Tower**: provisiona ambientes multi-conta com guardrails pré-configurados.
+
+---
+
+## 4. Principais serviços por domínio
+
+### Computação
+- **Amazon EC2**: instâncias virtuais com classes diversas (geral, computação otimizada, memória, Graviton).
+- **EC2 Auto Scaling**: escala horizontal automaticamente com políticas preditivas e baseadas em métricas.
+- **Amazon Lightsail**: instâncias simplificadas para workloads pequenos (blogs, sites estáticos).
+- **AWS Elastic Beanstalk**: PaaS gerenciado para aplicações web.
+- **AWS Lambda**: funções serverless (até 15 minutos, 10 GB memória, 6 vCPUs).
+- **AWS Fargate**: execução de contêineres serverless (integra com ECS e EKS).
+- **Amazon ECS / EKS / ECR**: orquestração e registro de contêineres.
+- **AWS Batch**: processamento em lote gerenciado.
+- **AWS Outposts / Snow Family**: serviços e infraestrutura AWS no local.
+
+### Rede e entrega de conteúdo
+- **Amazon VPC**: rede virtual gerenciável (sub-redes públicas/privadas, route tables, NACLs).
+- **Elastic Load Balancing**: Application (Camada 7), Network (Camada 4), Gateway (appliances), Classic (legado).
+- **Amazon Route 53**: DNS global com roteamento geopolítico, latency-based e health checks.
+- **AWS Global Accelerator**: melhora latência com rede global da AWS.
+- **AWS Direct Connect** e **Site-to-Site VPN**: conectividade privada/híbrida.
+
+### Armazenamento
+- **Amazon S3**: armazenamento de objetos (até 5 TB por objeto); integração com S3 Object Lambda, Storage Lens.
+- **Classes do S3 (2025)**:
+  - Standard, Intelligent-Tiering, Standard-IA, One Zone-IA, Glacier Instant Retrieval, Glacier Flexible Retrieval, Glacier Deep Archive.
+- **Amazon EBS**: volumes de bloco para EC2 (gp3 padrão, io2/io2 Block Express para alta performance).
+- **Amazon EFS**: sistema de arquivos NFS totalmente gerenciado, regional.
+- **AWS Backup**: centraliza políticas de backup para múltiplos serviços.
+- **Amazon FSx**: sistemas de arquivos gerenciados (NetApp ONTAP, Windows File Server, OpenZFS, Lustre).
+- **Instance Store**: armazenamento efêmero acoplado ao host físico.
+
+### Bancos de dados e análise
+- **Amazon RDS**: bancos relacionais gerenciados (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Amazon Aurora).
+- **Amazon Aurora**: compatível com MySQL/PostgreSQL com replicação distribuída em 6 cópias.
+- **Amazon DynamoDB**: NoSQL serverless, latência de milissegundos.
+- **Amazon ElastiCache**: Redis/Memcached gerenciados.
+- **Amazon Redshift**: data warehouse em larga escala.
+- **Amazon Athena**: consultas interativas em S3 com SQL (paga por TB varrido).
+- **AWS Glue**: catálogo de dados, ETL serverless.
+- **Amazon OpenSearch Service**: busca, análise de logs, machine learning.
+- **Amazon Neptune**: banco de grafos.
+
+### Integração e mensageria
+- **Amazon SQS**: filas (Standard e FIFO).
+- **Amazon SNS**: mensageria pub/sub (HTTP/S, e-mail, SMS, Lambda).
+- **Amazon EventBridge**: barramento de eventos (integra com SaaS, eventos customizados).
+- **AWS Step Functions**: orquestração serverless com fluxos de trabalho visuais.
+- **Amazon MQ**: brokers gerenciados para ActiveMQ e RabbitMQ.
+
+### Aplicações e conteúdo
+- **Amazon CloudFront**: CDN global com suporte a TLS moderno, Lambda@Edge, CloudFront Functions.
+- **AWS AppSync**: APIs GraphQL gerenciadas.
+- **Amazon API Gateway**: proxy de APIs REST e HTTP, websockets.
+- **Amazon QuickSight**: BI como serviço, com ML Insights.
+- **Amazon Pinpoint**: comunicação omnichannel (e-mail, SMS, push).
+
+### Inteligência artificial e machine learning (alta visibilidade no exame)
+- **Amazon SageMaker**: plataforma completa de machine learning.
+- **Amazon Rekognition, Comprehend, Transcribe, Polly, Textract**: serviços de IA pré-treinados.
+- **Amazon Bedrock**: plataforma de modelos de base (Generative AI) totalmente gerenciada.
+- **Amazon Q**: assistente generativo lançado em 2024 (conceitos podem aparecer em perguntas exploratórias).
+
+---
+
+## 5. Segurança e conformidade
+
+- **Boas práticas essenciais**:
+  - MFA para contas privilegiadas.
+  - Principais políticas em IAM: privilégio mínimo, separação de funções, rotação de credenciais.
+  - Habilitar **AWS Config** e **Security Hub** para visibilidade de conformidade.
+- **Serviços de segurança**:
+  - **AWS Shield** (Standard gratuito e Advanced pago) contra DDoS.
+  - **AWS WAF**: firewall de camada 7 com regras gerenciadas.
+  - **AWS KMS** e **AWS CloudHSM**: gerenciamento de chaves.
+  - **AWS Secrets Manager** e **SSM Parameter Store**: gestão de segredos.
+  - **Amazon GuardDuty**: detecção de ameaças com machine learning.
+  - **Amazon Inspector**: análise contínua de vulnerabilidades em EC2, ECR, Lambda.
+  - **AWS Macie**: detecção de dados sensíveis em S3.
+  - **AWS Artifact**: repositório de relatórios de conformidade (ISO, SOC, PCI etc.).
+  - **IAM Access Analyzer**: detecta acessos públicos ou externos inadvertidos.
+- **Log e auditoria**:
+  - **AWS CloudTrail**: trilha de auditoria em todas as contas (habilitar multi-região).
+  - **CloudTrail Lake**: armazenamento otimizado para análise.
+
+---
+
+## 6. Precificação, faturamento e suporte
+
+- **Modelos de cobrança**:
+  - **Sob demanda (on-demand)**: paga conforme o uso, sem compromisso.
+  - **Instâncias reservadas** (RDS, Redshift, DynamoDB, EC2) com 1 ou 3 anos, descontos maiores.
+  - **Savings Plans** (Compute e EC2 Instance) com flexibilidade maior que RI.
+  - **Instâncias Spot**: descontadas, com interrupção possível em 2 minutos.
+  - **Hosts dedicados**: servidores físicos exclusivos.
+  - **Serviços serverless**: cobram por número de execuções, duração ou volume processado.
+  - **Transferência de dados**: saída (data egress) é cobrada; entrada geralmente é gratuita.
+- **Ferramentas financeiras**:
+  - **AWS Pricing Calculator**: estimativas antes de implantações.
+  - **Billing & Cost Management**: painel consolidado de custos.
+  - **AWS Cost Explorer**: análises visuais, filtros por tag, reservados vs on-demand.
+  - **AWS Budgets**: alertas de custo/uso, integra com SNS e Chatbot.
+  - **Cost Anomaly Detection**: identifica desvios de custo com machine learning.
+- **Planos de suporte (valores aproximados de 2025)**:
+  - **Basic (gratuito)**: suporte 24/7 para problemas de faturamento, Trusted Advisor básico.
+  - **Developer (US$ 29/mês)**: orientação de melhores práticas, tempo de resposta < 12h para sistemas não críticos.
+  - **Business (a partir de US$ 100/mês)**: SLA 24/7 < 1h para cargas críticas, acesso completo ao Trusted Advisor, suporte a softwares de terceiros.
+  - **Enterprise On-Ramp (US$ 5.500/mês)**: TAM designado, revisões proativas, SLA 30 minutos.
+  - **Enterprise (a partir de US$ 15.000/mês)**: TAM dedicado, gerenciamento de eventos, SLA 15 minutos para workloads críticos.
+- **Tipos de chamados (cases)**:
+  - **Account and Billing Support**
+  - **Service Limit Increase**
+  - **Technical Support** (requer plano pago)
+
+---
+
+## 7. Observabilidade e gerenciamento
+
+- **Amazon CloudWatch**: métricas, logs, alarms, dashboards e eventos.
+- **CloudWatch Logs Insights**: consultas em logs.
+- **AWS CloudTrail**: auditoria de API (inclui Insights para anomalias).
+- **AWS X-Ray**: rastreamento distribuído (APM).
+- **AWS Trusted Advisor**: recomendações de custo, segurança, performance e limites.
+- **AWS Systems Manager**:
+  - **Session Manager**: acesso seguro a instâncias.
+  - **Run Command**, **Patch Manager**, **Change Manager**, **Parameter Store**.
+- **AWS Well-Architected Tool**: revisão contínua da arquitetura pelos 6 pilares (Operacional, Segurança, Confiabilidade, Performance, Eficiência de custos, Sustentabilidade).
+
+---
+
+## 8. Arquitetura e boas práticas
+
+- **Well-Architected Framework**:
+  1. **Excelência Operacional**
+  2. **Segurança**
+  3. **Confiabilidade**
+  4. **Eficiência de Performance**
+  5. **Otimização de Custos**
+  6. **Sustentabilidade** (introduzido como pilar em 2021)
+- **AWS CAF (Cloud Adoption Framework)**: Perspectivas de Negócios, Pessoas, Governança, Plataforma, Segurança e Operações.
+- **Modelos de migração**: rehost (lift-and-shift), replatform, refactor, repurchase, retire, retain (6 R’s).
+- **Estratégias de modernização**: uso de serviços gerenciados, serverless, containers.
+- **Disaster Recovery**:
+  - Backup & Restore
+  - Pilot Light
+  - Warm Standby
+  - Multi-site / Active-Active
+- **Sustentabilidade**: reduzir desperdícios, escolher instâncias Graviton, desligar recursos ociosos.
+
+---
+
+## 9. Preparação e recursos de estudo
+
+- **Trilhas oficiais AWS Skill Builder** (gratuitas e pagas).
+- **AWS Cloud Quest e AWS Jam** para prática gamificada.
+- **Documentação e FAQs oficiais** (quase sempre aparecem em perguntas).
+- **Prática com laboratórios (CloudAcademy, A Cloud Guru, Coursera, Udemy)**.
+- **Simulados CLF-C02**: utilize cronômetro e revise justificativas das respostas.
+- **Checklist pré-prova**:
+  - Domínios revisados e anotações atualizadas.
+  - Compreensão clara de responsabilidades compartilhadas.
+  - Prática de interpretar perguntas situacionais.
+  - Teste suas configurações do ambiente de prova (online) com antecedência.
+
+---
+
+## 10. Ebook complementar
+
+Para expandir o conteúdo, roteiros de estudo e incluir exercícios + listas de verificação, acesse o ebook em `ebook/guia-aws-cloud-practitioner-2025.md`.  
+Você pode converter o material para PDF/EPUB usando ferramentas como `pandoc`:
+
+```
+pandoc ebook/guia-aws-cloud-practitioner-2025.md -o guia-aws-cloud-practitioner-2025.pdf
+```
+
+---
+
+### Contribuições
+Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções ou novos tópicos. Seu apoio ajuda a manter este guia relevante e gratuito para a comunidade.
+
+Boa prova! 🚀
