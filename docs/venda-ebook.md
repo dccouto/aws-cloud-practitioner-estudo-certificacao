@@ -1,69 +1,47 @@
-## Como vender o ebook com confirmação manual via Pix
+## Checklist para vender o ebook usando Pix + WhatsApp
 
-A landing page captura os dados de compradores e envia um e-mail para você validar o Pix antes de entregar o ebook manualmente. Siga os passos abaixo.
+O projeto agora é 100% estático. O cliente paga via Pix, copia o código “copia e cola” ou escaneia o QR Code e, em seguida, envia o comprovante pelo WhatsApp. Siga este passo a passo para adaptar tudo ao seu negócio.
 
-### 1. Preparar o ambiente
+### 1. Personalize o modal de pagamento (`public/index.html`)
 
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Configure sua chave Pix real no modal de pagamento (`public/index.html`):
-   - Atualize a imagem do QR Code (`src` do `<img>`).
-   - Substitua o conteúdo da `<textarea id="pix-code">` pelo código “copia e cola” verdadeiro.
-   - Ajuste o e-mail de suporte (`contato@example.com`) para o endereço comercial correto.
-3. Opcional: personalize textos, preço (R$ 9,99) e cores na landing page (`public/index.html`, `public/styles.css`).
+- **QR Code**: substitua a imagem do `<img>` pelo QR Code oficial do seu Pix (pode usar um link hospedado ou um arquivo local).
+- **Código “copia e cola”**: cole o código real dentro da `<textarea id="pix-code">`.
+- **E-mail de suporte**: troque `contato@example.com` pelo e-mail comercial que aparecerá como contato.
+- **Link do WhatsApp**: atualize `https://wa.me/55SEUNUMERO?...` com o DDD + número do atendimento e ajuste a mensagem pré-preenchida, se quiser.
 
-### 2. Configurar envio de e-mail
+> Dica: a mensagem do WhatsApp usa codificação de URL (espaços viram `%20`). Gere o texto usando um encoder online ou edite manualmente.
 
-O backend usa SMTP para enviar notificações. Duplique o arquivo `.env.example` para `.env` e preencha com os dados do seu provedor (ex.: Gmail, Outlook, Amazon SES):
+### 2. Ajuste textos e preço
 
+- O preço padrão é R$ 9,99. Caso mude, atualize todos os trechos do site (botão principal, modal, sessões de bônus etc.).
+- Revise depoimentos, estatísticas e provas sociais para refletir resultados reais dos seus clientes.
+
+### 3. Publicar o site
+
+Como o site é estático, basta disponibilizar a pasta `public/`:
+
+- **GitHub Pages**: publique o conteúdo de `public/` em um branch `gh-pages`.
+- **Vercel / Netlify / Render (static)**: defina a pasta `public/` como diretório de publicação.
+- **Hospedagem própria**: envie os arquivos via FTP ou use um bucket com website hosting.
+
+Para testar localmente:
+```bash
+npm install
+npm start
 ```
-SMTP_HOST=smtp.seuprovedor.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=usuario@seuprovedor.com
-SMTP_PASS=senha-ou-token
-NOTIFY_EMAIL=destino@seu-negocio.com
-```
+O comando `npm start` utiliza `npx serve public` e abre o site em `http://localhost:3000`.
 
-- `NOTIFY_EMAIL` é para onde o aviso será enviado (pode ser o mesmo que `SMTP_USER`).
-- Se usar Gmail, habilite app password.
-- Para port 465, defina `SMTP_SECURE=true`.
+### 4. Fluxo de atendimento
 
-### 3. Testar localmente
+1. Cliente acessa a landing page e realiza o Pix com o QR Code ou código “copia e cola”.
+2. Ele clica no botão de WhatsApp, envia o comprovante e informa nome/e-mail.
+3. Você valida o pagamento e entrega o ebook manualmente (e-mail, link privado, Google Drive etc.).
 
-1. Rode o servidor:
-   ```bash
-   npm start
-   ```
-2. Acesse `http://localhost:3000`, preencha o formulário com dados de teste e verifique se o e-mail chega.
+### 5. Boas práticas
 
-### 4. Publicar em produção
+- Tenha uma resposta pronta no WhatsApp com o link de entrega do ebook.
+- Use etiquetas do WhatsApp Business ou uma planilha para controlar status de cada venda (pago, ebook enviado, dúvidas).
+- Atualize QR Code e código Pix periodicamente para evitar expiração.
+- Se quiser automações no futuro (chatbot, e-mail marketing, checkouts), este front pode ser integrado a outras plataformas.
 
-- Hospedagem recomendada: serviços que suportam Node.js (Railway, Render, Fly.io, AWS, VPS etc.).
-- Defina as variáveis de ambiente com os mesmos valores do `.env`.
-- Fique atento ao campo `PORT` exigido pelo provedor.
-- Para usar GitHub Pages, publique apenas a pasta `public/` (front-end). O backend deve rodar em outro provedor e a URL do fetch deverá ser atualizada.
-
-### 5. Fluxo de atendimento
-
-1. Cliente paga via Pix usando o QR Code / código “copia e cola”.
-2. Ele envia comprovante e dados pelo formulário.
-3. Você recebe um e-mail com nome, e-mail, referência do pagamento e observações.
-4. Valide o Pix manualmente e envie o ebook (PDF/ZIP) pelo e-mail informado.
-
-### 6. Entrega do ebook
-
-- O repositório contém o arquivo `ebook/guia-aws-cloud-practitioner-2025.zip` (Markdown).
-- Gere um PDF oficial com a ferramenta de sua preferência e armazene-o em local seguro.
-- Envie o PDF ou pacote desejado diretamente ao cliente após confirmar o pagamento.
-
-### 7. Boas práticas
-
-- Utilize HTTPS na hospedagem.
-- Mantenha registro das vendas (planilha ou CRM).
-- Atualize depoimentos e suporte conforme receber feedback real.
-- Monitore caixa de entrada e configure filtros para não perder notificações.
-
-Com isso, todo pagamento gera um e-mail de aviso e você mantém o controle manual sobre a entrega do ebook. Ajuste o fluxo conforme sua operação crescer (integração com automações, CRM, ferramentas de e-mail marketing etc.).*** End Patch
+Com esse fluxo, você controla todo o processo sem backend, apenas com Pix e WhatsApp. Ajuste conforme o volume de vendas aumentar.

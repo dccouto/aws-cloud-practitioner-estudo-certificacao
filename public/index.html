@@ -259,27 +259,21 @@
           </div>
         </div>
         <hr />
-        <h3>Já pagou? Avise a equipe para liberar o ebook</h3>
-        <form id="notify-form" class="form">
-          <div class="form__group">
-            <label for="name">Seu nome completo</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form__group">
-            <label for="email">E-mail usado no comprovante</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form__group">
-            <label for="pixReference">Referência do pagamento (ID, chave Pix ou mensagem)</label>
-            <input type="text" id="pixReference" name="pixReference" />
-          </div>
-          <div class="form__group">
-            <label for="message">Observações adicionais (opcional)</label>
-            <textarea id="message" name="message" rows="3" placeholder="Ex.: horário do pagamento, telefone para contato, dúvidas específicas"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary">Enviar comprovante</button>
-          <p class="form__feedback" id="form-feedback" role="alert"></p>
-        </form>
+        <h3>Já pagou? Envie o comprovante por WhatsApp</h3>
+        <p class="modal__text">
+          Clique no botão abaixo para abrir o WhatsApp com uma mensagem pronta. Anexe o comprovante e envie para nossa equipe. Ajuste o número e a mensagem diretamente no código.
+        </p>
+        <a
+          class="btn btn--primary btn--full"
+          href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1!%20Enviei%20o%20Pix%20de%20R$9,99%20do%20Ebook%20AWS.%0A%20Nome:%20%0A%20E-mail:%20"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Enviar comprovante pelo WhatsApp
+        </a>
+        <p class="form__note">
+          Substitua <code>55SEUNUMERO</code> no link acima pelo DDD + número do WhatsApp comercial.
+        </p>
       </div>
     </div>
 

@@ -127,6 +127,11 @@ p {
   box-shadow: 0 16px 28px rgba(249, 115, 22, 0.35);
 }
 
+.btn--full {
+  width: 100%;
+  text-align: center;
+}
+
 .btn--secondary {
   background: rgba(249, 115, 22, 0.14);
   color: var(--accent);
@@ -463,6 +468,12 @@ p {
   line-height: 1;
 }
 
+.modal__text {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
 .pix-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -544,6 +555,19 @@ p {
 
 .form__feedback--error {
   color: #f87171;
+}
+
+.form__note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.form__note code {
+  background: rgba(148, 163, 184, 0.15);
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
